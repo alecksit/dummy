@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/security 
+        http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<http use-expressions="true">
+	<access-denied-handler error-page="/login" />
+		<intercept-url pattern="/anonymous*" access="isAnonymous()" />
+		<intercept-url pattern="/css/**" access="permitAll" />
+		<intercept-url pattern="/js/**" access="permitAll" />
+		<intercept-url pattern="/images/**" access="permitAll" />
+		<intercept-url pattern="/login*" access="permitAll" />
+		<intercept-url pattern="/resources/**" access="permitAll" />
+		<intercept-url pattern="/out/**" access="isAuthenticated()" />
+		<intercept-url pattern="/in/**" access="isAuthenticated()" />
+		<intercept-url pattern="/admin/**" access="isAuthenticated()" />
+		<intercept-url pattern="/**" access="permitAll" />
+
+		<form-login login-page='/login' login-processing-url="/perform_login" 
+			authentication-failure-url="/login?error=true"
+			username-parameter="username"	password-parameter="password" 
+			always-use-default-target="false"/>
+
+		<logout logout-url="/perform_logout" delete-cookies="JSESSIONID"
+			logout-success-url="/login"/>
+
+	</http>
+	
+	
+	<beans:bean name="customLogoutSuccessHandler"
+		class="com.advaizer.security.CustomLogoutSuccessHandler" />
+	
+	<!-- Select users and user_roles from database -->
+	<authentication-manager>
+	  <authentication-provider>
+	    <password-encoder hash="bcrypt" />
+		<jdbc-user-service data-source-ref="dataSource"
+		  users-by-username-query=
+		    "select username,userpass,enabled from userinfo where username=?;"
+		  authorities-by-username-query=
+		    "select username, userrole from usersrole where username =?;" />
+	  </authentication-provider>
+	</authentication-manager>
+<beans:bean id="mySuccessHandler" class="com.advaizer.security.CustomLoginSuccessHandler">
+    </beans:bean>
+
+
+</beans:beans>
+
+
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="MyApp" packages="com.mobileum">
+  <Appenders>
+   <RollingFile name="RollingFile" fileName="${sys:catalina.home}/logs/RAlogs/application.log" 
+     filePattern="${sys:catalina.home}/logs/RAlogs/application-%d{MM-dd-yyyy}.log">
+      <PatternLayout>
+        <Pattern>%d %p %c{1.} %m%n</Pattern>
+      </PatternLayout>
+      <TimeBasedTriggeringPolicy />
+    </RollingFile>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+    <Async name="rollingFileAppender">
+      <AppenderRef ref="RollingFile"/>
+    </Async>
+    <Async name="consoleAppender">
+      <AppenderRef ref="Console"/>
+    </Async>
+  </Appenders>
+  <Loggers>
+    <Root level="debug">
+      <AppenderRef ref="rollingFileAppender"/>
+      <AppenderRef ref="consoleAppender"/>
+    </Root>
+  </Loggers>
+</Configuration>

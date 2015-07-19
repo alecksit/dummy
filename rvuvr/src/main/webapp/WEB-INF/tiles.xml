@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="base.definition" template="/WEB-INF/view/include/layout.jsp">
+		<put-attribute name="appHeader" value="/WEB-INF/view/include/header.jsp" />
+		<put-attribute name="appTop" value="" />
+		<put-attribute name="leftPanel" value="" />
+		<put-attribute name="rightPanel" value="" />
+		<put-attribute name="appBody" value="" />
+		<put-attribute name="appFooter" value="/WEB-INF/view/include/footer.jsp" />
+	</definition>
+
+	<definition name="appHome" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/homecontent.jsp" />
+			<put-attribute name="appTop" value="/WEB-INF/view/include/topcontent.jsp" />
+			
+	</definition>
+	
+	<definition name="adminHome" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/admin/adminhomecontent.jsp" />
+			<put-attribute name="leftPanel" value="/WEB-INF/view/admin/adminleftpanel.jsp" />
+			
+	</definition>
+	
+	<definition name="login" template="/WEB-INF/view/login.jsp"/>
+	
+	
+</tiles-definitions>
