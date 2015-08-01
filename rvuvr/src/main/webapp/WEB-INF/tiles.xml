@@ -14,8 +14,7 @@
 
 	<definition name="appHome" extends="base.definition">
 			<put-attribute name="appBody" value="/WEB-INF/view/homecontent.jsp" />
-			<put-attribute name="appTop" value="/WEB-INF/view/include/topcontent.jsp" />
-			
+						
 	</definition>
 	
 	<definition name="adminHome" extends="base.definition">
@@ -23,6 +22,12 @@
 			<put-attribute name="leftPanel" value="/WEB-INF/view/admin/adminleftpanel.jsp" />
 			
 	</definition>
+	
+	<definition name="addBrandAdminBody" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/admin/addbrandinfo.jsp" />
+			
+	</definition>
+	
 	
 	<definition name="login" template="/WEB-INF/view/login.jsp"/>
 	

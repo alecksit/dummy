@@ -52,8 +52,6 @@ public class MicroSegmentQueryBuilder {
 		query.append(" order by imsicount desc, mocallminutes desc, mtcallminutes desc, ")
 			.append(" datausage desc ");
 	}
-
-	
 	/**
 	 * Populate query for microsegment chart.
 	 *

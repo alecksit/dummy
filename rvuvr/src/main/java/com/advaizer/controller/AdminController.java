@@ -20,7 +20,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.advaizer.repository.LocationRepositoryImpl;
 import com.advaizer.service.LocationService;
 
-
 /**
  * @author smruti
  *
@@ -45,6 +44,17 @@ public class AdminController {
 				
 		ModelAndView mv;
 		mv= new ModelAndView("adminHome");
+		return mv;
+	}
+	
+
+	@RequestMapping(method = RequestMethod.GET, value={"/admin/add/brand"})
+	public ModelAndView showAddBrandHome( final HttpServletRequest request, final HttpServletResponse response) {
+		
+				
+		ModelAndView mv;
+		mv= new ModelAndView("addBrandAdminBody");
+		
 		return mv;
 	}
 	
