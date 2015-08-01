@@ -50,13 +50,77 @@ public class AdminController {
 
 	@RequestMapping(method = RequestMethod.GET, value={"/admin/add/brand"})
 	public ModelAndView showAddBrandHome( final HttpServletRequest request, final HttpServletResponse response) {
-		
-				
+			
 		ModelAndView mv;
 		mv= new ModelAndView("addBrandAdminBody");
 		
 		return mv;
 	}
+	@RequestMapping(method = RequestMethod.GET, value={"/admin/add/areainfo"})
+	public ModelAndView showAddAreaInfo( final HttpServletRequest request, final HttpServletResponse response) {
+			
+		ModelAndView mv;
+		mv= new ModelAndView("areaInfoAdminBody");
+		
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/admin/add/categoryinfo"})
+	public ModelAndView showAddCategoryInfo( final HttpServletRequest request, final HttpServletResponse response) {
+			
+		ModelAndView mv;
+		mv= new ModelAndView("categoryInfoAdminBody");
+		
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/admin/add/companyinfo"})
+	public ModelAndView showAddCompanyInfo( final HttpServletRequest request, final HttpServletResponse response) {
+			
+		ModelAndView mv;
+		mv= new ModelAndView("companyInfoAdminBody");
+		
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/admin/add/locationinfo"})
+	public ModelAndView showAddLocationInfo( final HttpServletRequest request, final HttpServletResponse response) {
+			
+		ModelAndView mv;
+		mv= new ModelAndView("locationInfoAdminBody");
+		
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/admin/add/stateinfo"})
+	public ModelAndView showAddStateInfo( final HttpServletRequest request, final HttpServletResponse response) {
+			
+		ModelAndView mv;
+		mv= new ModelAndView("stateInfoAdminBody");
+		
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/admin/add/tempusers"})
+	public ModelAndView showAddTempUsersInfo( final HttpServletRequest request, final HttpServletResponse response) {
+			
+		ModelAndView mv;
+		mv= new ModelAndView("tempUsersAdminBody");
+		
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/admin/add/userinfo"})
+	public ModelAndView showAddUserInfo( final HttpServletRequest request, final HttpServletResponse response) {
+			
+		ModelAndView mv;
+		mv= new ModelAndView("userInfoAdminBody");
+		
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/admin/add/usersrole"})
+	public ModelAndView showAddUsersRoleInfo( final HttpServletRequest request, final HttpServletResponse response) {
+			
+		ModelAndView mv;
+		mv= new ModelAndView("userRoleAdminBody");
+		
+		return mv;
+	}
+	
 	
 	
 	@RequestMapping(method = RequestMethod.GET, value={"/admin/states"})

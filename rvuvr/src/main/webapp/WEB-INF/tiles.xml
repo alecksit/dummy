@@ -27,6 +27,95 @@
 			<put-attribute name="appBody" value="/WEB-INF/view/admin/addbrandinfo.jsp" />
 			
 	</definition>
+	<definition name="areaInfoAdminBody" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/admin/areainfobody.jsp" />
+			
+	</definition>
+	<definition name="stateInfoAdminBody" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/admin/stateinfobody.jsp" />
+			
+	</definition>
+	<definition name="tempUsersAdminBody" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/admin/tempusersbody.jsp" />
+			
+	</definition>
+	<definition name="userInfoAdminBody" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/admin/userinfobody.jsp" />
+			
+	</definition>
+	<definition name="userRoleAdminBody" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/admin/usersrolebody.jsp" />
+			
+	</definition>
+	<definition name="brandInfoAdminBody" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/admin/brandinfobody.jsp" />
+			
+	</definition>
+	<definition name="categoryInfoAdminBody" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/admin/categoryinfoBody.jsp" />
+			
+	</definition>
+	<definition name="companyInfoAdminBody" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/admin/companyinfobody.jsp" />
+			
+	</definition>
+	<definition name="locationInfoAdminBody" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/admin/locationinfobody.jsp" />
+			
+	</definition>
+	
+	
+	<definition name="userAccount" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/accountbody.jsp" />			
+	</definition>
+	<definition name="userBlog" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/blogbody.jsp" />			
+	</definition>
+	<definition name="userBlogGrid" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/bloggridbody.jsp" />			
+	</definition>
+	<definition name="userBlogList" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/bloglistbody.jsp" />			
+	</definition>
+	<definition name="userContact" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/contactbody.jsp" />			
+	</definition>
+	<definition name="userDetail" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/detailbody.jsp" />			
+	</definition>
+	<definition name="userFaq" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/faqbody.jsp" />			
+	</definition>
+	<definition name="userFeatures" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/featuresbody.jsp" />			
+	</definition>
+	<definition name="userHead" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/headbody.jsp" />			
+	</definition>
+	<definition name="userListing" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/listingbody.jsp" />			
+	</definition>
+	<definition name="userListingGrid" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/listinggridbody.jsp" />			
+	</definition>
+	<definition name="userListings" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/listingsbody.jsp" />			
+	</definition>
+	<definition name="userLogin" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/loginbody.jsp" />			
+	</definition>
+	<definition name="userPopover" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/Popoverrequire tooltipbody.jsp" />			
+	</definition>
+	<definition name="userPostad" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/postad.jsp" />			
+	</definition>
+	<definition name="userProfile" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/profilebody.jsp" />			
+	</definition>
+	<definition name="userRegister" extends="base.definition">
+			<put-attribute name="appBody" value="/WEB-INF/view/user/registerbody.jsp" />			
+	</definition>
 	
 	
 	<definition name="login" template="/WEB-INF/view/login.jsp"/>
