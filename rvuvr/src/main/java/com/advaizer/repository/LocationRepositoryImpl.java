@@ -73,14 +73,14 @@ private static Logger LOGGER = LogManager.getLogger(LocationRepositoryImpl.class
 					LOGGER.debug("Getting all Areas per stateId " + stateId);
 					LOGGER.debug("States query : " + query);
 					
-					final HashMap<Integer,String> areaList = new LinkedHashMap<Integer,String>();
+					final HashMap<Integer,String> stateList = new LinkedHashMap<Integer,String>();
 
 					try {
 						jdbcTemplate.query(query, new RowMapper<Integer>(){
 							@Override
 							public Integer mapRow(final ResultSet rs, final int rowNumber) throws SQLException {
 								
-								areaList.put(rs.getInt("areaid"), rs.getString("areaname"));
+								stateList.put(rs.getInt("areaid"), rs.getString("areaname"));
 																										
 								return 1;
 							}
@@ -90,9 +90,42 @@ private static Logger LOGGER = LogManager.getLogger(LocationRepositoryImpl.class
 						
 					}
 									
-					LOGGER.debug("Sates found : " + areaList.size());
+					LOGGER.debug("Sates found : " + stateList.size());
 					
-					return areaList;
+					return stateList;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#getZoneStateRepository(int)
+	 */
+	@Override
+	public Map<Integer, String> getZoneStateRepository(final int statezone) {
+		// TODO Auto-generated method stub
+		final String query = BasicFilterQueryBuilder.getStateZoneQuery(new StringBuilder(" "+LocationColumns.STATEZONE+ "="+statezone)).toString();
+		
+		LOGGER.debug("Getting all Sates per zoneId " + statezone);
+		LOGGER.debug("States query : " + query);
+		
+		final HashMap<Integer,String> areaList = new LinkedHashMap<Integer,String>();
+
+		try {
+			jdbcTemplate.query(query, new RowMapper<Integer>(){
+				@Override
+				public Integer mapRow(final ResultSet rs, final int rowNumber) throws SQLException {
+					
+					areaList.put(rs.getInt("stateid"), rs.getString("statename"));
+																							
+					return 1;
+				}
+			});
+		} catch(final DataAccessException dae) {
+			LOGGER.error("Error occurred while getting all trackers: ", dae);
+			
+		}
+						
+		LOGGER.debug("Sates found : " + areaList.size());
+		
+		return areaList;
 	}
 
 }

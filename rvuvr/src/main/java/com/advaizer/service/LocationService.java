@@ -20,4 +20,10 @@ public interface LocationService {
 	 */
 	public Map<Integer, String> getStateAreaService(int stateId);
 
+	/**
+	 * @param statezone
+	 * @return
+	 */
+	public Map<Integer, String> getZoneStateService(int statezone);
+
 }

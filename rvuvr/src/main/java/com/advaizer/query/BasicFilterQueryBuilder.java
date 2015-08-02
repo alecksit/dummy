@@ -16,15 +16,14 @@ public class BasicFilterQueryBuilder {
 		query.append("Select ").append(LocationColumns.STATEID).append(" stateid,")
 		.append(LocationColumns.STATENAME).append(" statename from ").append(Relation.STATE).append(" where ").append(whereClause);
 		
-		return query;
-		
+		return query;		
 	}
 
 	/**
 	 * @param stringBuilder
 	 * @return
 	 */
-	public static Object getStateAreaQuery(final StringBuilder whereClause) {
+	public static StringBuilder getStateAreaQuery(final StringBuilder whereClause) {
 final StringBuilder query=new StringBuilder("");
 		
 		query.append("Select ").append(LocationColumns.AREAID).append(" areaid,")
@@ -32,5 +31,13 @@ final StringBuilder query=new StringBuilder("");
 		
 		return query;
 	}
-
+	public static StringBuilder getStateZoneQuery(final StringBuilder whereClause) {
+		final StringBuilder query=new StringBuilder("");
+				
+				query.append("Select ").append(LocationColumns.STATEID).append(" stateid,")
+				.append(LocationColumns.STATENAME).append(" statename from ").append(Relation.STATE).append(" where ").append(whereClause);
+				
+				return query;
+			}
+	
 }
