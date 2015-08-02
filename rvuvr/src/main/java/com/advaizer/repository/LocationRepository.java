@@ -33,5 +33,20 @@ public interface LocationRepository {
 	 */
 	public Map<Integer, String> getMajorAreaRepository();
 
+	/**
+	 * @return
+	 */
+	public Map<Integer, String> getMajorZoneAreaRepository();
+
+	/**
+	 * @param zoneid
+	 * @return
+	 */
+	public Map<Integer, String> getMajorZoneAreaRepository(int zoneid);
+
+	/**
+	 * @return
+	 */
+
 
 }

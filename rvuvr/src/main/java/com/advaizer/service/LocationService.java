@@ -31,5 +31,16 @@ public interface LocationService {
 	 */
 	public Map<Integer, String> getMajorAreaService();
 
+	/**
+	 * @return
+	 */
+	public Map<Integer, String> getMajorZoneAreaService();
+
+	/**
+	 * @param zoneid
+	 * @return
+	 */
+	Map<Integer, String> getMajorZoneAreaService(int zoneid);
+
 
 }

@@ -16,6 +16,7 @@ public enum LocationColumns {
 	STATEZONE("zoneid"),
 	ISMAJORCITY("ISMAJORCITY");
 
+
 	
 	private final String name;
 	private LocationColumns(final String name) {

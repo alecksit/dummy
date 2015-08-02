@@ -39,5 +39,17 @@ final StringBuilder query=new StringBuilder("");
 				
 				return query;
 			}
+	public static StringBuilder getMajorZoneAreaQuery(final int zoneId) {
+		final StringBuilder query=new StringBuilder("");
+				
+				query.append("Select ").append(Relation.AREA).append(".").append(LocationColumns.AREANAME).append(" areaname,").append(Relation.AREA).append(".").append(LocationColumns.AREAID)
+				.append(" areaid").append(" from ").append(Relation.AREA).append(" inner join ")
+				.append(Relation.STATE).append(" on ").append( Relation.STATE).append(".")
+				.append(LocationColumns.STATEID).append("=").append(Relation.AREA).append(".")
+				.append(LocationColumns.STATEID).append(" and ").append(Relation.STATE).append(".")
+				.append(LocationColumns.STATEZONE).append("=").append(zoneId);
+				return query;
+			}
+	
 	
 }
