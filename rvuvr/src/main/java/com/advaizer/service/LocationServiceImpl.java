@@ -69,5 +69,15 @@ LOGGER.debug("inside getMajorAreaService");
 		return locationRepository.getMajorAreaRepository();
 
 	}
+	
+	@Override
+	public Map<Integer, String> getMajorZoneAreaService(final int zoneid) {
+		LOGGER.debug("inside getMajorZoneAreaService");
+				
+				return locationRepository.getMajorZoneAreaRepository(zoneid);
+
+			}
+
+	
 
 }

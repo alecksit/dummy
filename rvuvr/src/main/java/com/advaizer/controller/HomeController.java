@@ -273,6 +273,14 @@ public class HomeController {
 
 		return locationService.getMajorAreaService();
 	}
+	@RequestMapping(method = RequestMethod.GET, value={"/majorzonearea/{zoneId}"})
+	@ResponseBody Map<Integer, String> getMajorZoneArea( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("zoneId") final int zoneId) {
+		
+		 LOGGER.debug("Inside majorzonearea");
+		
+
+		return locationService.getMajorZoneAreaService(zoneId);
+	}
 	
 	
 
