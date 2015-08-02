@@ -51,12 +51,23 @@ public class LocationServiceImpl implements LocationService {
 	}
 
 	/* (non-Javadoc)
+
 	 * @see com.advaizer.service.LocationService#getSomeStateService(java.lang.Object)
 	 */
 	@Override
 	public Map<Integer, String> getZoneStateService(final int statezone) {
 		// TODO Auto-generated method stub
 		return locationRepository.getZoneStateRepository(statezone);
+	}
+
+	 /* @see com.advaizer.service.LocationService#getMajorAreaService()
+	 */
+	@Override
+	public Map<Integer, String> getMajorAreaService() {
+LOGGER.debug("inside getMajorAreaService");
+		
+		return locationRepository.getMajorAreaRepository();
+
 	}
 
 }

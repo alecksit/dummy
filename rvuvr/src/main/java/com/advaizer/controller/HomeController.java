@@ -255,6 +255,7 @@ public class HomeController {
 		return locationService.getStateAreaService(stateId);
 	}
 	
+
 	@RequestMapping(method = RequestMethod.GET, value={"/zonestates/{zoneId}"})
 	@ResponseBody Map<Integer, String> getStateZone( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("zoneId") final int zoneId) {
 		
@@ -262,6 +263,20 @@ public class HomeController {
 		
 		return locationService.getZoneStateService(zoneId);
 	}
+
+
+	@RequestMapping(method = RequestMethod.GET, value={"/majorarea"})
+	@ResponseBody Map<Integer, String> getMajorArea( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		 LOGGER.debug("Inside majorarea");
+		
+
+		return locationService.getMajorAreaService();
+	}
+	
+	
+	
+
 	/**
 	 * Renders roaming trends.
 	 *

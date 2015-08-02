@@ -21,9 +21,17 @@ public interface LocationRepository {
 	public Map<Integer, String> getStateAreaRepository(int stateId);
 
 	/**
+
 	 * @param statezone
 	 * @return
 	 */
 	public Map<Integer, String> getZoneStateRepository(int statezone);
+	/**
+
+	 * @param 
+	 * @return
+	 */
+	public Map<Integer, String> getMajorAreaRepository();
+
 
 }
