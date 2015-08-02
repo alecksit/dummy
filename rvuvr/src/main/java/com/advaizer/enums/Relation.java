@@ -14,6 +14,9 @@ public enum Relation {
 	/** The attribute. */
 	STATE("stateinfo"),
 	
+	/** The attribute. */
+	AREA("areainfo"),
+	
 	/** The attribute category. */
 	ATTRIBUTE_CATEGORY("ATTRIBUTE_CATEGORY"),
 	

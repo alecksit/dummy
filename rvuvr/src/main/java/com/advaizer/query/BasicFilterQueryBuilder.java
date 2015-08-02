@@ -20,4 +20,17 @@ public class BasicFilterQueryBuilder {
 		
 	}
 
+	/**
+	 * @param stringBuilder
+	 * @return
+	 */
+	public static Object getStateAreaQuery(final StringBuilder whereClause) {
+final StringBuilder query=new StringBuilder("");
+		
+		query.append("Select ").append(LocationColumns.AREAID).append(" areaid,")
+		.append(LocationColumns.AREANAME).append(" areaname from ").append(Relation.AREA).append(" where ").append(whereClause);
+		
+		return query;
+	}
+
 }

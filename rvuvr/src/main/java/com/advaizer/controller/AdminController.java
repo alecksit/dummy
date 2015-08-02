@@ -123,7 +123,7 @@ public class AdminController {
 	
 	
 	
-	@RequestMapping(method = RequestMethod.GET, value={"/admin/states"})
+	@RequestMapping(method = RequestMethod.GET, value={"/states"})
 	@ResponseBody Map<Integer, String> getAllStates( final HttpServletRequest request, final HttpServletResponse response) {
 		
 		 LOGGER.debug("Inside /admin/states");
