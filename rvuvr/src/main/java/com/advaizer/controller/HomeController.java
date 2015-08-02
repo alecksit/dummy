@@ -275,7 +275,6 @@ public class HomeController {
 	}
 	
 	
-	
 
 	/**
 	 * Renders roaming trends.
