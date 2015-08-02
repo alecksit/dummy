@@ -252,7 +252,6 @@ public class HomeController {
 		
 		 LOGGER.debug("Inside states");
 		
-
 		return locationService.getStateAreaService(stateId);
 	}
 	
