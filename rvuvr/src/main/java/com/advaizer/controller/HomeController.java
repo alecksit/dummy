@@ -254,6 +254,16 @@ public class HomeController {
 		return locationService.getStateAreaService(stateId);
 	}
 	
+
+	@RequestMapping(method = RequestMethod.GET, value={"/majorarea"})
+	@ResponseBody Map<Integer, String> getMajorArea( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		 LOGGER.debug("Inside majorarea");
+		
+
+		return locationService.getMajorAreaService();
+	}
+	
 	
 	
 	/**

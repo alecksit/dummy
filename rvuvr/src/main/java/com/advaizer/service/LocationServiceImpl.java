@@ -50,4 +50,14 @@ public class LocationServiceImpl implements LocationService {
 		return locationRepository.getStateAreaRepository(stateId);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#getMajorAreaService()
+	 */
+	@Override
+	public Map<Integer, String> getMajorAreaService() {
+LOGGER.debug("inside getMajorAreaService");
+		
+		return locationRepository.getMajorAreaRepository();
+	}
+
 }

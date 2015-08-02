@@ -20,4 +20,9 @@ public interface LocationRepository {
 	 */
 	public Map<Integer, String> getStateAreaRepository(int stateId);
 
+	/**
+	 * @return
+	 */
+	public Map<Integer, String> getMajorAreaRepository();
+
 }

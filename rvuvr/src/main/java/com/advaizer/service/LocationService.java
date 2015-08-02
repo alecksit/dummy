@@ -20,4 +20,9 @@ public interface LocationService {
 	 */
 	public Map<Integer, String> getStateAreaService(int stateId);
 
+	/**
+	 * @return
+	 */
+	public Map<Integer, String> getMajorAreaService();
+
 }

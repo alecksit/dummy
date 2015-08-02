@@ -12,7 +12,8 @@ public enum LocationColumns {
 	ISACTIVE("isactive"),
 	STATENAME("statename"),
 	AREAID("areaid"),
-	AREANAME("areaname");
+	AREANAME("areaname"),
+	ISMAJORCITY("ISMAJORCITY");
 	
 	private final String name;
 	private LocationColumns(final String name) {

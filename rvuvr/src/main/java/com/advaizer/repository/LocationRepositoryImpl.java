@@ -95,4 +95,39 @@ private static Logger LOGGER = LogManager.getLogger(LocationRepositoryImpl.class
 					return areaList;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#getMajorAreaRepository()
+	 */
+	@Override
+	public Map<Integer, String> getMajorAreaRepository() {
+		// TODO Auto-generated method stub
+
+		final String query = BasicFilterQueryBuilder.getStateAreaQuery(new StringBuilder(" "+LocationColumns.ISMAJORCITY+ "=1")).toString();
+		
+		LOGGER.debug("Getting all major Areas ");
+		LOGGER.debug("States query : " + query);
+		
+		final HashMap<Integer,String> areaList = new LinkedHashMap<Integer,String>();
+
+		try {
+			jdbcTemplate.query(query, new RowMapper<Integer>(){
+				@Override
+				public Integer mapRow(final ResultSet rs, final int rowNumber) throws SQLException {
+					
+					areaList.put(rs.getInt("areaid"), rs.getString("areaname"));
+																							
+					return 1;
+				}
+			});
+		} catch(final DataAccessException dae) {
+			LOGGER.error("Error occurred while getting all trackers: ", dae);
+			
+		}
+						
+		LOGGER.debug("Sates found : " + areaList.size());
+		
+		return areaList;
+	}
+	
+
 }
