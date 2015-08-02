@@ -4,6 +4,7 @@
 package com.advaizer.service;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -37,5 +38,46 @@ public class LocationServiceImpl implements LocationService {
 		return locationRepository.getAllStatesRepository();
 		
 	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#getStateAreaService(int)
+	 */
+	@Override
+	public Map<Integer, String> getStateAreaService(final int stateId) {
+
+		LOGGER.debug("inside getStateAreaService");
+		
+		return locationRepository.getStateAreaRepository(stateId);
+	}
+
+	/* (non-Javadoc)
+
+	 * @see com.advaizer.service.LocationService#getSomeStateService(java.lang.Object)
+	 */
+	@Override
+	public Map<Integer, String> getZoneStateService(final int statezone) {
+		// TODO Auto-generated method stub
+		return locationRepository.getZoneStateRepository(statezone);
+	}
+
+	 /* @see com.advaizer.service.LocationService#getMajorAreaService()
+	 */
+	@Override
+	public Map<Integer, String> getMajorAreaService() {
+LOGGER.debug("inside getMajorAreaService");
+		
+		return locationRepository.getMajorAreaRepository();
+
+	}
+	
+	@Override
+	public Map<Integer, String> getMajorZoneAreaService(final int zoneid) {
+		LOGGER.debug("inside getMajorZoneAreaService");
+				
+				return locationRepository.getMajorZoneAreaRepository(zoneid);
+
+			}
+
+	
 
 }

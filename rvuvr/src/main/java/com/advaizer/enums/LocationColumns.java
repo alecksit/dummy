@@ -9,7 +9,14 @@ package com.advaizer.enums;
  */
 public enum LocationColumns {
 	STATEID("stateid"),
-	STATENAME("statename");
+	ISACTIVE("isactive"),
+	STATENAME("statename"),
+	AREAID("areaid"),
+	AREANAME("areaname"),
+	STATEZONE("zoneid"),
+	ISMAJORCITY("ISMAJORCITY");
+
+
 	
 	private final String name;
 	private LocationColumns(final String name) {

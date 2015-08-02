@@ -4,6 +4,7 @@
 package com.advaizer.controller;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,8 +13,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.advaizer.service.LocationService;
@@ -44,6 +47,8 @@ public class HomeController {
 	/** The trend service. */
 	@Autowired
 	private LocationService locationService;
+
+	private Object statezone;
 	
 	
 	
@@ -233,7 +238,53 @@ public class HomeController {
 	}*/
 	
 	
+	@RequestMapping(method = RequestMethod.GET, value={"/states"})
+	@ResponseBody Map<Integer, String> getAllStates( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		 LOGGER.debug("Inside states");
+		
+
+		return locationService.getAllStatesService();
+	}
 	
+	@RequestMapping(method = RequestMethod.GET, value={"/area/{stateId}"})
+	@ResponseBody Map<Integer, String> getStateArea( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("stateId") final int stateId) {
+		
+		 LOGGER.debug("Inside states");
+		
+		return locationService.getStateAreaService(stateId);
+	}
+	
+
+	@RequestMapping(method = RequestMethod.GET, value={"/zonestates/{zoneId}"})
+	@ResponseBody Map<Integer, String> getStateZone( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("zoneId") final int zoneId) {
+		
+		 LOGGER.debug("Inside states");
+		
+		return locationService.getZoneStateService(zoneId);
+	}
+
+
+	@RequestMapping(method = RequestMethod.GET, value={"/majorarea"})
+	@ResponseBody Map<Integer, String> getMajorArea( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		 LOGGER.debug("Inside majorarea");
+		
+
+		return locationService.getMajorAreaService();
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/majorzonearea/{zoneId}"})
+	@ResponseBody Map<Integer, String> getMajorZoneArea( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("zoneId") final int zoneId) {
+		
+		 LOGGER.debug("Inside majorzonearea");
+		
+
+		return locationService.getMajorZoneAreaService(zoneId);
+	}
+	
+	
+	
+
 	/**
 	 * Renders roaming trends.
 	 *
@@ -245,8 +296,5 @@ public class HomeController {
 		mv.addObject("roamType", roamType);
 		return mv;
 	}*/
-	
-	
-	
-	
+		
 }
