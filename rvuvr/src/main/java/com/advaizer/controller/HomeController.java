@@ -3,6 +3,8 @@
  */
 package com.advaizer.controller;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.advaizer.service.LocationService;
 import com.advaizer.service.MetaDataService;
 import com.advaizer.service.TrendService;
 
@@ -37,6 +40,14 @@ public class HomeController {
 	@Autowired
 	private TrendService trendService;
 	
+	
+	/** The trend service. */
+	@Autowired
+	private LocationService locationService;
+	
+	
+	
+	
 	/**
 	 * Show home.
 	 *
@@ -45,8 +56,109 @@ public class HomeController {
 	@RequestMapping(method = RequestMethod.GET, value={"/"})
 	public ModelAndView showAppHome( final HttpServletRequest request, final HttpServletResponse response) {
 		
+		
+		final HashMap<Integer,String> activeStateList=locationService.getAllStatesService();
 		ModelAndView mv;
 		mv= new ModelAndView("appHome");
+		mv.addObject("activeStateList", activeStateList);
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/account"})
+	public ModelAndView showUserAccount( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userAccount");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/blog"})
+	public ModelAndView showUserBlog( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userBlog");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/bloggrid"})
+	public ModelAndView showUserBlogGrid( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userBlogGrid");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/bloglist"})
+	public ModelAndView showUserBlogList( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userBlogList");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/contact"})
+	public ModelAndView showUserContact( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userContact");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/details"})
+	public ModelAndView showUserDetail( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userDetail");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/faq"})
+	public ModelAndView showUserFaq( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userFaq");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/features"})
+	public ModelAndView showUserFeatures( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userFeatures");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/head"})
+	public ModelAndView showUserHead( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userHead");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/listing"})
+	public ModelAndView showUserListing( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userListing");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/listinggrid"})
+	public ModelAndView showUserListingGrid( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userListingGrid");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/listings"})
+	public ModelAndView showUserListings( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userListings");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/profile"})
+	public ModelAndView showUserProfile( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userProfile");
+		return mv;
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/register"})
+	public ModelAndView showUserRegister( final HttpServletRequest request, final HttpServletResponse response) {
+		
+		ModelAndView mv;
+		mv= new ModelAndView("userRegister");
 		return mv;
 	}
 	
@@ -75,8 +187,9 @@ public class HomeController {
 	public ModelAndView invalid( final HttpServletRequest request, final HttpServletResponse response) {
 		
 	
-		
+		final HashMap<Integer,String> activeStateList=locationService.getAllStatesService();
 		final ModelAndView mv = new ModelAndView("invalid");
+		mv.addObject("activeStateList",activeStateList);
 		return mv;
 	}
 	
