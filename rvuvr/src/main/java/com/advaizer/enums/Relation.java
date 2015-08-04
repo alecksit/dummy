@@ -18,6 +18,7 @@ public enum Relation {
 	AREA("areainfo"),
 	
 	COMPANY("companyinfo"),
+	BRAND("brandinfo"),
 	
 	/** The attribute category. */
 	ATTRIBUTE_CATEGORY("ATTRIBUTE_CATEGORY"),

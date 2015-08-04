@@ -29,9 +29,9 @@ public interface LocationService {
 	 /* @return
 	 */
 	public Map<Integer, String> getMajorAreaService();
-
+	
 	/**
-	 * @return majorarea
+	 * @return
 	 */
 	public Map<Integer, String> getMajorZoneAreaService();
 
@@ -46,6 +46,16 @@ public interface LocationService {
 	 * @return
 	 */
 	public Map<Integer, String> getCompaniesPerLocationService(int locationId);
+	/**
+	 * @param companyId
+	 * @return
+	 */
+	public Map<Integer, String> getBrandsPerCompanyService(int companyId);
+	/**
+	 * @param locationId
+	 * @return
+	 */
+	public Map<Integer, String> getBrandsPerLocationService(int locationId);
 
 
 }

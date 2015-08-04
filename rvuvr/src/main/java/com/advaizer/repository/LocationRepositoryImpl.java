@@ -234,6 +234,72 @@ final String query = BasicFilterQueryBuilder.getCompaniesPerLocationQuery(locati
 	}
 
 	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#getBrandsPerCompanyRepository(int)
+	 */
+	@Override
+	public Map<Integer, String> getBrandsPerCompanyRepository(final int companyId) {
+		// TODO Auto-generated method stub
+final String query = BasicFilterQueryBuilder.getBrandsPerCompanyQuery(companyId).toString();
+		
+		LOGGER.debug("Getting all brands ");
+		LOGGER.debug("Brands query : " + query);
+		
+		final HashMap<Integer,String> brandList = new LinkedHashMap<Integer,String>();
+
+		try {
+			jdbcTemplate.query(query, new RowMapper<Integer>(){
+				@Override
+				public Integer mapRow(final ResultSet rs, final int rowNumber) throws SQLException {
+					
+					brandList.put(rs.getInt("brandId"), rs.getString("brandname"));
+																							
+					return 1;
+				}
+			});
+		} catch(final DataAccessException dae) {
+			LOGGER.error("Error occurred while getting all trackers: ", dae);
+			
+		}
+						
+		LOGGER.debug("Brands found : " + brandList.size());
+		
+		return brandList;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#getBrandsPerLocationRepository(int)
+	 */
+	@Override
+	public Map<Integer, String> getBrandsPerLocationRepository(final int locationId) {
+		// TODO Auto-generated method stub
+final String query = BasicFilterQueryBuilder.getBrandsPerLocationQuery(locationId).toString();
+		
+		LOGGER.debug("Getting all brands ");
+		LOGGER.debug("Brands query : " + query);
+		
+		final HashMap<Integer,String> brandList = new LinkedHashMap<Integer,String>();
+
+		try {
+			jdbcTemplate.query(query, new RowMapper<Integer>(){
+				@Override
+				public Integer mapRow(final ResultSet rs, final int rowNumber) throws SQLException {
+					
+					brandList.put(rs.getInt("brandId"), rs.getString("brandname"));
+																							
+					return 1;
+				}
+			});
+		} catch(final DataAccessException dae) {
+			LOGGER.error("Error occurred while getting all trackers: ", dae);
+			
+		}
+						
+		LOGGER.debug("Brands found : " + brandList.size());
+		
+		return brandList;
+	}
+
+	/* (non-Javadoc)
 	 * @see com.advaizer.repository.LocationRepository#getMajorZoneAreaRepository(int)
 	 */
 

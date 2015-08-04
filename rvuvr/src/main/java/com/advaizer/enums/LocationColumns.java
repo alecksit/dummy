@@ -15,9 +15,11 @@ public enum LocationColumns {
 	AREANAME("areaname"),
 	STATEZONE("zoneid"),
 	ISMAJORCITY("ISMAJORCITY"),
-	COMPANYLOCATION("locationid"),
+	COMPANYLOCATION("companylocation"),
 	COMPANYID("companyid"),
-	COMPANYNAME("companyname");
+	COMPANYNAME("companyname"),
+	BRANDID("brandid"),
+	BRANDNAME("brandname");
 
 	
 	private final String name;
