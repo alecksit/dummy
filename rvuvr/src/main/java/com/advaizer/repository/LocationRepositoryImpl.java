@@ -86,8 +86,7 @@ private static Logger LOGGER = LogManager.getLogger(LocationRepositoryImpl.class
 							}
 						});
 					} catch(final DataAccessException dae) {
-						LOGGER.error("Error occurred while getting all trackers: ", dae);
-						
+						LOGGER.error("Error occurred while getting all trackers: ", dae);						
 					}
 									
 					LOGGER.debug("Sates found : " + stateList.size());
@@ -199,6 +198,39 @@ private static Logger LOGGER = LogManager.getLogger(LocationRepositoryImpl.class
 	public Map<Integer, String> getMajorZoneAreaRepository() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#getCompaniesDataRepository(int)
+	 */
+	@Override
+	public Map<Integer, String> getCompaniesPerLocationRepository(final int locationId) {
+final String query = BasicFilterQueryBuilder.getCompaniesPerLocationQuery(locationId).toString();
+		
+		LOGGER.debug("Getting all companies ");
+		LOGGER.debug("Companies query : " + query);
+		
+		final HashMap<Integer,String> companyList = new LinkedHashMap<Integer,String>();
+
+		try {
+			jdbcTemplate.query(query, new RowMapper<Integer>(){
+				@Override
+				public Integer mapRow(final ResultSet rs, final int rowNumber) throws SQLException {
+					
+					companyList.put(rs.getInt("companyId"), rs.getString("companyname"));
+																							
+					return 1;
+				}
+			});
+		} catch(final DataAccessException dae) {
+			LOGGER.error("Error occurred while getting all trackers: ", dae);
+			
+		}
+						
+		LOGGER.debug("Companies found : " + companyList.size());
+		
+		return companyList;
+		
 	}
 
 	/* (non-Javadoc)

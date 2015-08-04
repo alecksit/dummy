@@ -45,8 +45,13 @@ public interface LocationRepository {
 	public Map<Integer, String> getMajorZoneAreaRepository(int zoneid);
 
 	/**
+	 * @param locationId
 	 * @return
 	 */
+	public Map<Integer, String> getCompaniesPerLocationRepository(int locationId);
 
+	/**
+	 * @return
+	 */
 
 }

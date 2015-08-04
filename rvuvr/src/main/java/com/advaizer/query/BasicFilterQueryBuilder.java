@@ -49,7 +49,19 @@ final StringBuilder query=new StringBuilder("");
 				.append(LocationColumns.STATEID).append(" and ").append(Relation.STATE).append(".")
 				.append(LocationColumns.STATEZONE).append("=").append(zoneId);
 				return query;
+	}
+	
+	/**
+	 * @param locationId
+	 * @return
+	 */
+	public static StringBuilder getCompaniesPerLocationQuery(final int locationId) {
+		final StringBuilder query=new StringBuilder("");
+		
+		query.append("Select ").append(LocationColumns.COMPANYID).append(" companyid,")
+		.append(LocationColumns.COMPANYNAME).append(" companyname from ").append(Relation.COMPANY).append(" where ").append(LocationColumns.COMPANYLOCATION).append(" = ").append(locationId);
+		
+		return query;
 			}
-	
-	
+
 }
