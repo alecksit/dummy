@@ -49,7 +49,50 @@ final StringBuilder query=new StringBuilder("");
 				.append(LocationColumns.STATEID).append(" and ").append(Relation.STATE).append(".")
 				.append(LocationColumns.STATEZONE).append("=").append(zoneId);
 				return query;
+	}
+	
+	/**
+	 * @param locationId
+	 * @return
+	 */
+	public static StringBuilder getCompaniesPerLocationQuery(final int locationId) {
+		final StringBuilder query=new StringBuilder("");
+		
+		query.append("Select ").append(LocationColumns.COMPANYID).append(" companyid,")
+		.append(LocationColumns.COMPANYNAME).append(" companyname from ").append(Relation.COMPANY).append(" where ").append(LocationColumns.COMPANYLOCATION).append(" = ").append(locationId);
+		
+		return query;
 			}
-	
-	
+
+	/**
+	 * @param companyId
+	 * @return
+	 */
+	public static Object getBrandsPerCompanyQuery(final int companyId) {
+		// TODO Auto-generated method stub
+final StringBuilder query=new StringBuilder("");
+		
+		query.append("Select ").append(LocationColumns.BRANDID).append(" brandid,")
+		.append(LocationColumns.BRANDNAME).append(" brandname from ").append(Relation.BRAND).append(" where ").append(LocationColumns.COMPANYID).append(" = ").append(companyId);
+		
+		return query;
+	}
+
+	/**
+	 * @param locationId
+	 * @return
+	 */
+	public static Object getBrandsPerLocationQuery(final int locationId) {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		
+		query.append("Select ").append(Relation.BRAND).append(".").append(LocationColumns.BRANDID).append(" brandid,").append(Relation.BRAND).append(".").append(LocationColumns.BRANDNAME)
+		.append(" brandname").append(" from ").append(Relation.BRAND).append(" inner join ")
+		.append(Relation.COMPANY).append(" on ").append( Relation.BRAND).append(".")
+		.append(LocationColumns.COMPANYID).append("=").append(Relation.COMPANY).append(".")
+		.append(LocationColumns.COMPANYID).append(" and ").append(Relation.COMPANY).append(".")
+		.append(LocationColumns.COMPANYLOCATION).append("=").append(locationId);
+		return query;
+	}
+
 }

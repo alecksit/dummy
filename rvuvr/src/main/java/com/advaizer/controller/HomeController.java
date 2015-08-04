@@ -278,13 +278,32 @@ public class HomeController {
 		
 		 LOGGER.debug("Inside majorzonearea");
 		
-
 		return locationService.getMajorZoneAreaService(zoneId);
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, value={"/companyinformation/{locationId}"})
+	@ResponseBody Map<Integer, String> getCompaniesPerLocation( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("locationId") final int locationId) {
+		
+		 LOGGER.debug("Inside company per location id"+locationId);
+		
+		return locationService.getCompaniesPerLocationService(locationId);
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/brandinfo/{companyId}"})
+	@ResponseBody Map<Integer, String> getBrandsPerCompany( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("companyId") final int companyId) {
+		
+		 LOGGER.debug("Inside brands per companyid"+companyId);
+		
+		return locationService.getBrandsPerCompanyService(companyId);
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/brandperlocation/{locationId}"})
+	@ResponseBody Map<Integer, String> getBrandsPerLocation( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("locationId") final int locationId) {
+		
+		 LOGGER.debug("Inside brands per locationid"+locationId);
+		
+		return locationService.getBrandsPerLocationService(locationId);
+	}
 	
 	
-
 	/**
 	 * Renders roaming trends.
 	 *

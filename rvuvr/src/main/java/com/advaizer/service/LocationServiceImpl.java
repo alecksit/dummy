@@ -78,6 +78,51 @@ LOGGER.debug("inside getMajorAreaService");
 
 			}
 
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#getMajorZoneAreaService()
+	 */
+	@Override
+	public Map<Integer, String> getMajorZoneAreaService() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#getCompaniesDataService(int)
+	 */
+	@Override
+	public Map<Integer, String> getCompaniesPerLocationService(final int locationId) {
+		
+		LOGGER.debug("inside getCompanyPerLocationService");
+		
+		return locationRepository.getCompaniesPerLocationRepository(locationId);
+
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#getBrandsPerCompanyService(int)
+	 */
+	@Override
+	public Map<Integer, String> getBrandsPerCompanyService(final int companyId) {
+		// TODO Auto-generated method stub
+LOGGER.debug("inside getBrandsPerCompanyService");
+		
+		return locationRepository.getBrandsPerCompanyRepository(companyId);
+
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#getBrandsPerLocationService(int)
+	 */
+	@Override
+	public Map<Integer, String> getBrandsPerLocationService(final int locationId) {
+		// TODO Auto-generated method stub
+LOGGER.debug("inside getBrandsPerLocationService");
+		
+		return locationRepository.getBrandsPerLocationRepository(locationId);
+	}
+
 	
 
 }

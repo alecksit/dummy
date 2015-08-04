@@ -13,7 +13,6 @@ import java.util.Map;
 public interface LocationService {
 	
 	public HashMap<Integer,String> getAllStatesService();
-
 	/**
 	 * @param stateId
 	 * @return
@@ -30,7 +29,7 @@ public interface LocationService {
 	 /* @return
 	 */
 	public Map<Integer, String> getMajorAreaService();
-
+	
 	/**
 	 * @return
 	 */
@@ -41,6 +40,22 @@ public interface LocationService {
 	 * @return
 	 */
 	Map<Integer, String> getMajorZoneAreaService(int zoneid);
+
+	/**
+	 * @param locationId
+	 * @return
+	 */
+	public Map<Integer, String> getCompaniesPerLocationService(int locationId);
+	/**
+	 * @param companyId
+	 * @return
+	 */
+	public Map<Integer, String> getBrandsPerCompanyService(int companyId);
+	/**
+	 * @param locationId
+	 * @return
+	 */
+	public Map<Integer, String> getBrandsPerLocationService(int locationId);
 
 
 }
