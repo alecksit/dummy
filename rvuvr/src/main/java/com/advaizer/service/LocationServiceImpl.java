@@ -157,6 +157,17 @@ LOGGER.debug("inside getCompaniesPerStateService");
 		return locationRepository.getProductPerCompanyRepository(companyId);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#getProductRatingPerLocationService(int)
+	 */
+	@Override
+	public Map<Integer, String> getProductRatingPerLocationService(final int locationId) {
+		// TODO Auto-generated method stub
+LOGGER.debug("inside getProductRatingsPerLocationService");
+		
+		return locationRepository.getProductRatingPerLocationRepository(locationId);
+	}
+
 	
 
 }

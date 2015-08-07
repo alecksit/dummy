@@ -323,6 +323,14 @@ public class HomeController {
 		
 		return locationService.getProductPerCompanyService(companyId);
 	}
+	@RequestMapping(method = RequestMethod.GET, value={"/productratingperlocation/{locationId}"})
+	@ResponseBody Map<Integer, String> getProductRatingPerLocation( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("locationId") final int locationId) {
+		
+		 LOGGER.debug("Inside products ratings per locationid"+locationId);
+		
+		return locationService.getProductRatingPerLocationService(locationId);
+	}
+	
 	
 	/**
 	 * Renders roaming trends.

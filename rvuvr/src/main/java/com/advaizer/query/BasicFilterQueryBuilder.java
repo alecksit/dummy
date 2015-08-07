@@ -156,4 +156,27 @@ final StringBuilder query=new StringBuilder("");
 		return query;
 	}
 
+	/**
+	 * @param locationId
+	 * @return
+	 */
+	public static Object getProductRatingPerLocationQuery(final int locationId) {
+		// TODO Auto-generated method stub
+final StringBuilder query=new StringBuilder("");
+		
+		query.append("Select ").append(Relation.PRODUCTRATINGS).append(".").append(LocationColumns.PRODUCTID).append(" productid,").append(Relation.PRODUCTRATINGS).append(".").append(LocationColumns.RATINGPOINT)
+		.append(" ratingpoint").append(" from ").append(Relation.PRODUCTRATINGS).append(" inner join ")
+		.append(Relation.PRODUCT).append(" on ").append( Relation.PRODUCT).append(".")
+		.append(LocationColumns.PRODUCTID).append("=").append(Relation.PRODUCTRATINGS).append(".")
+		.append(LocationColumns.PRODUCTID).append(" inner join ").append(Relation.BRAND).append(" on ")
+		.append(Relation.BRAND).append(".").append(LocationColumns.BRANDID).append("=").append( Relation.PRODUCT)
+		.append(".").append(LocationColumns.BRANDID).append(" inner join ").append(Relation.COMPANY).append(" on ")
+		.append(Relation.COMPANY).append(".").append(LocationColumns.COMPANYID).append("=").append( Relation.BRAND).append(".").append(LocationColumns.COMPANYID)
+		.append(" inner join ").append(Relation.LOCATION).append(" on ").append(Relation.LOCATION).append(".").append(LocationColumns.LOCATIONID).append("=")
+		.append(Relation.COMPANY).append(".").append(LocationColumns.COMPANYLOCATION)
+		.append(" and ").append(Relation.LOCATION).append(".")
+		.append(LocationColumns.LOCATIONID).append("=").append(locationId);
+		return query;
+	}
+
 }

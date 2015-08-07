@@ -395,6 +395,37 @@ final String query = BasicFilterQueryBuilder.getProductPerCompanyQuery(companyId
 	}
 
 	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#getProductRatingPerLocationRepository(int)
+	 */
+	@Override
+	public Map<Integer, String> getProductRatingPerLocationRepository(final int locationId) {
+		// TODO Auto-generated method stub
+final String query = BasicFilterQueryBuilder.getProductRatingPerLocationQuery(locationId).toString();
+		
+		LOGGER.debug("Getting all Products Ratings ");
+		LOGGER.debug("Products query : " + query);
+		
+		final HashMap<Integer,String> productratingList = new LinkedHashMap<Integer,String>();
+
+		try {
+			jdbcTemplate.query(query, new RowMapper<Integer>(){
+				@Override
+				public Integer mapRow(final ResultSet rs, final int rowNumber) throws SQLException {
+					
+					productratingList.put(rs.getInt("productId"), rs.getString("ratingpoint"));
+																							
+					return 1;
+				}
+			});
+		} catch(final DataAccessException dae) {
+			LOGGER.error("Error occurred while getting all trackers: ", dae);
+			
+		}				
+		LOGGER.debug("Products Rating found : " + productratingList.size());
+		return productratingList;
+	}
+
+	/* (non-Javadoc)
 	 * @see com.advaizer.repository.LocationRepository#getMajorZoneAreaRepository(int)
 	 */
 

@@ -71,6 +71,11 @@ public interface LocationService {
 	 * @return
 	 */
 	public Map<Integer, String> getProductPerCompanyService(int companyId);
+	/**
+	 * @param locationId
+	 * @return
+	 */
+	public Map<Integer, String> getProductRatingPerLocationService(int locationId);
 
 
 }

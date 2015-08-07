@@ -81,6 +81,12 @@ public interface LocationRepository {
 	public Map<Integer, String> getProductPerCompanyRepository(int companyId);
 
 	/**
+	 * @param locationId
+	 * @return
+	 */
+	public Map<Integer, String> getProductRatingPerLocationRepository(int locationId);
+
+	/**
 	 * @return
 	 */
 

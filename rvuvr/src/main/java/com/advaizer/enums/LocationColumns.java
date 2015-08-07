@@ -22,7 +22,8 @@ public enum LocationColumns {
 	BRANDNAME("brandname"),
 	PRODUCTID("productid"),
 	PRODUCTNAME("productname"),
-	LOCATIONID("locationid");
+	LOCATIONID("locationid"),
+	RATINGPOINT("ratingpoint");
 
 	
 	private final String name;
