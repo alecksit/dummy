@@ -300,6 +300,101 @@ final String query = BasicFilterQueryBuilder.getBrandsPerLocationQuery(locationI
 	}
 
 	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#getProductsPerLocationRepository(int)
+	 */
+	@Override
+	public Map<Integer, String> getProductsPerLocationRepository(final int locationId) {
+		// TODO Auto-generated method stub
+final String query = BasicFilterQueryBuilder.getProductsPerLocationQuery(locationId).toString();
+		
+		LOGGER.debug("Getting all products ");
+		LOGGER.debug("Products query : " + query);
+		
+		final HashMap<Integer,String> productList = new LinkedHashMap<Integer,String>();
+
+		try {
+			jdbcTemplate.query(query, new RowMapper<Integer>(){
+				@Override
+				public Integer mapRow(final ResultSet rs, final int rowNumber) throws SQLException {
+					
+					productList.put(rs.getInt("productId"), rs.getString("productname"));
+																							
+					return 1;
+				}
+			});
+		} catch(final DataAccessException dae) {
+			LOGGER.error("Error occurred while getting all trackers: ", dae);
+			
+		}
+						
+		LOGGER.debug("Products found : " + productList.size());
+		
+		return productList;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#getCompanyPerStateRepository(int)
+	 */
+	@Override
+	public Map<Integer, String> getCompanyPerStateRepository(final int stateId) {
+		// TODO Auto-generated method stub
+final String query = BasicFilterQueryBuilder.getCompanyPerStateQuery(stateId).toString();
+		
+		LOGGER.debug("Getting all companies ");
+		LOGGER.debug("Companies query : " + query);
+		
+		final HashMap<Integer,String> companyList = new LinkedHashMap<Integer,String>();
+
+		try {
+			jdbcTemplate.query(query, new RowMapper<Integer>(){
+				@Override
+				public Integer mapRow(final ResultSet rs, final int rowNumber) throws SQLException {
+					
+					companyList.put(rs.getInt("companyId"), rs.getString("companyname"));
+																							
+					return 1;
+				}
+			});
+		} catch(final DataAccessException dae) {
+			LOGGER.error("Error occurred while getting all trackers: ", dae);
+			
+		}				
+		LOGGER.debug("Products found : " + companyList.size());
+		return companyList;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#getProductPerCompanyRepository(int)
+	 */
+	@Override
+	public Map<Integer, String> getProductPerCompanyRepository(final int companyId) {
+		// TODO Auto-generated method stub
+final String query = BasicFilterQueryBuilder.getProductPerCompanyQuery(companyId).toString();
+		
+		LOGGER.debug("Getting all Products ");
+		LOGGER.debug("Products query : " + query);
+		
+		final HashMap<Integer,String> productList = new LinkedHashMap<Integer,String>();
+
+		try {
+			jdbcTemplate.query(query, new RowMapper<Integer>(){
+				@Override
+				public Integer mapRow(final ResultSet rs, final int rowNumber) throws SQLException {
+					
+					productList.put(rs.getInt("productId"), rs.getString("productname"));
+																							
+					return 1;
+				}
+			});
+		} catch(final DataAccessException dae) {
+			LOGGER.error("Error occurred while getting all trackers: ", dae);
+			
+		}				
+		LOGGER.debug("Products found : " + productList.size());
+		return productList;
+	}
+
+	/* (non-Javadoc)
 	 * @see com.advaizer.repository.LocationRepository#getMajorZoneAreaRepository(int)
 	 */
 

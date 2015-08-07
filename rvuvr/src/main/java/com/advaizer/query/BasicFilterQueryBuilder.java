@@ -95,4 +95,65 @@ final StringBuilder query=new StringBuilder("");
 		return query;
 	}
 
+	/**
+	 * @param locationId
+	 * @return
+	 */
+	public static Object getProductsPerLocationQuery(final int locationId) {
+		// TODO Auto-generated method stub
+final StringBuilder query=new StringBuilder("");
+		
+		query.append("Select ").append(Relation.PRODUCT).append(".").append(LocationColumns.PRODUCTID).append(" productid,").append(Relation.PRODUCT).append(".").append(LocationColumns.PRODUCTNAME)
+		.append(" productname").append(" from ").append(Relation.PRODUCT).append(" inner join ")
+		.append(Relation.BRAND).append(" on ").append( Relation.BRAND).append(".")
+		.append(LocationColumns.BRANDID).append("=").append(Relation.PRODUCT).append(".")
+		.append(LocationColumns.BRANDID).append(" inner join ").append(Relation.COMPANY).append(" on ")
+		.append(Relation.COMPANY).append(".").append(LocationColumns.COMPANYID).append("=").append( Relation.BRAND)
+		.append(".").append(LocationColumns.COMPANYID)		
+		.append(" and ").append(Relation.COMPANY).append(".")
+		.append(LocationColumns.COMPANYLOCATION).append("=").append(locationId);
+		return query;
+	}
+
+	/**
+	 * @param stateId
+	 * @return
+	 */
+	public static Object getCompanyPerStateQuery(final int stateId) {
+		// TODO Auto-generated method stub
+final StringBuilder query=new StringBuilder("");
+		
+		query.append("Select ").append(Relation.COMPANY).append(".").append(LocationColumns.COMPANYID).append(" companyid,").append(Relation.COMPANY).append(".").append(LocationColumns.COMPANYNAME)
+		.append(" companyname").append(" from ").append(Relation.COMPANY).append(" inner join ")
+		.append(Relation.LOCATION).append(" on ").append( Relation.LOCATION).append(".")
+		.append(LocationColumns.LOCATIONID).append("=").append(Relation.COMPANY).append(".")
+		.append(LocationColumns.COMPANYLOCATION).append(" inner join ").append(Relation.AREA).append(" on ")
+		.append(Relation.AREA).append(".").append(LocationColumns.AREAID).append("=").append( Relation.LOCATION)
+		.append(".").append(LocationColumns.AREAID).append(" inner join ").append(Relation.STATE).append(" on ")
+		.append(Relation.STATE).append(".").append(LocationColumns.STATEID).append("=").append(Relation.AREA).append(".").append(LocationColumns.STATEID)		
+		.append(" and ").append(Relation.STATE).append(".")
+		.append(LocationColumns.STATEID).append("=").append(stateId);
+		return query;
+	}
+
+	/**
+	 * @param companyId
+	 * @return
+	 */
+	public static Object getProductPerCompanyQuery(final int companyId) {
+		// TODO Auto-generated method stub
+final StringBuilder query=new StringBuilder("");
+		
+		query.append("Select ").append(Relation.PRODUCT).append(".").append(LocationColumns.PRODUCTID).append(" productid,").append(Relation.PRODUCT).append(".").append(LocationColumns.PRODUCTNAME)
+		.append(" productname").append(" from ").append(Relation.PRODUCT).append(" inner join ")
+		.append(Relation.BRAND).append(" on ").append( Relation.BRAND).append(".")
+		.append(LocationColumns.BRANDID).append("=").append(Relation.PRODUCT).append(".")
+		.append(LocationColumns.BRANDID).append(" inner join ").append(Relation.COMPANY).append(" on ")
+		.append(Relation.COMPANY).append(".").append(LocationColumns.COMPANYID).append("=").append( Relation.BRAND)
+		.append(".").append(LocationColumns.COMPANYID)		
+		.append(" and ").append(Relation.COMPANY).append(".")
+		.append(LocationColumns.COMPANYID).append("=").append(companyId);
+		return query;
+	}
+
 }

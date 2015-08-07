@@ -302,7 +302,27 @@ public class HomeController {
 		
 		return locationService.getBrandsPerLocationService(locationId);
 	}
-	
+	@RequestMapping(method = RequestMethod.GET, value={"/productsperlocation/{locationId}"})
+	@ResponseBody Map<Integer, String> getProductsPerLocation( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("locationId") final int locationId) {
+		
+		 LOGGER.debug("Inside products per locationid"+locationId);
+		
+		return locationService.getProductsPerLocationService(locationId);
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/companyperstate/{stateId}"})
+	@ResponseBody Map<Integer, String> getCompanyPerState( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("stateId") final int stateId) {
+		
+		 LOGGER.debug("Inside companies per stateid"+stateId);
+		
+		return locationService.getCompanyPerStateService(stateId);
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/productpercompany/{companyId}"})
+	@ResponseBody Map<Integer, String> getProductPerCompany( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("companyId") final int companyId) {
+		
+		 LOGGER.debug("Inside products per companyid"+companyId);
+		
+		return locationService.getProductPerCompanyService(companyId);
+	}
 	
 	/**
 	 * Renders roaming trends.

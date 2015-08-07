@@ -16,6 +16,8 @@ public enum Relation {
 	
 	/** The attribute. */
 	AREA("areainfo"),
+	PRODUCT("productinfo"),
+	LOCATION("locationinfo"),
 	
 	COMPANY("companyinfo"),
 	BRAND("brandinfo"),
