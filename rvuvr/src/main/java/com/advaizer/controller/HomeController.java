@@ -330,8 +330,7 @@ public class HomeController {
 		
 		return locationService.getProductRatingPerLocationService(locationId);
 	}
-	
-	
+		
 	/**
 	 * Renders roaming trends.
 	 *
