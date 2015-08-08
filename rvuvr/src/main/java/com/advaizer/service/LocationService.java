@@ -56,6 +56,26 @@ public interface LocationService {
 	 * @return
 	 */
 	public Map<Integer, String> getBrandsPerLocationService(int locationId);
+	/**
+	 * @param locationId
+	 * @return
+	 */
+	public Map<Integer, String> getProductsPerLocationService(int locationId);
+	/**
+	 * @param stateId
+	 * @return
+	 */
+	public Map<Integer, String> getCompanyPerStateService(int stateId);
+	/**
+	 * @param companyId
+	 * @return
+	 */
+	public Map<Integer, String> getProductPerCompanyService(int companyId);
+	/**
+	 * @param locationId
+	 * @return
+	 */
+	public Map<Integer, String> getProductRatingPerLocationService(int locationId);
 
 
 }

@@ -123,6 +123,51 @@ LOGGER.debug("inside getBrandsPerLocationService");
 		return locationRepository.getBrandsPerLocationRepository(locationId);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#getProductsPerLocationService(int)
+	 */
+	@Override
+	public Map<Integer, String> getProductsPerLocationService(final int locationId) {
+		// TODO Auto-generated method stub
+		LOGGER.debug("inside getProductsPerLocationService");
+		
+		return locationRepository.getProductsPerLocationRepository(locationId);
+
+	}
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#getCompanyPerStateService(int)
+	 */
+	@Override
+	public Map<Integer, String> getCompanyPerStateService(final int stateId) {
+		// TODO Auto-generated method stub
+		LOGGER.debug("inside getCompaniesPerStateService");
+		
+		return locationRepository.getCompanyPerStateRepository(stateId);
+
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#getProductPerCompanyService(int)
+	 */
+	@Override
+	public Map<Integer, String> getProductPerCompanyService(final int companyId) {
+		// TODO Auto-generated method stub
+LOGGER.debug("inside getCompaniesPerStateService");
+		
+		return locationRepository.getProductPerCompanyRepository(companyId);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#getProductRatingPerLocationService(int)
+	 */
+	@Override
+	public Map<Integer, String> getProductRatingPerLocationService(final int locationId) {
+		// TODO Auto-generated method stub
+LOGGER.debug("inside getProductRatingsPerLocationService");
+		
+		return locationRepository.getProductRatingPerLocationRepository(locationId);
+	}
+
 	
 
 }
