@@ -1,3 +1,7 @@
 /target/
 /.classpath
+<<<<<<< HEAD
+/bin
+=======
 /bin/
+>>>>>>> branch 'release-jagriti' of https://github.com/alecksit/dummy.git
