@@ -4,7 +4,10 @@
 package com.advaizer.repository;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import com.advaizer.model.Product;
 
 /**
  * @author smruti
@@ -85,6 +88,12 @@ public interface LocationRepository {
 	 * @return
 	 */
 	public Map<Integer, String> getProductRatingPerLocationRepository(int locationId);
+
+	/**
+	 * @param companyId
+	 * @return
+	 */
+	public List<Product> getProductDetailPerCompanyRepository(int companyId);
 
 	/**
 	 * @return

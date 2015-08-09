@@ -4,6 +4,7 @@
 package com.advaizer.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.advaizer.model.Product;
 import com.advaizer.service.LocationService;
 import com.advaizer.service.MetaDataService;
 import com.advaizer.service.TrendService;
@@ -329,6 +331,13 @@ public class HomeController {
 		 LOGGER.debug("Inside products ratings per locationid"+locationId);
 		
 		return locationService.getProductRatingPerLocationService(locationId);
+	}
+	@RequestMapping(method = RequestMethod.GET, value={"/productdetailspercompany/{companyId}"})
+	@ResponseBody List<Product> getProductDetailPerCompany( final HttpServletRequest request, final HttpServletResponse response,@PathVariable("companyId") final int companyId) {
+		
+		 LOGGER.debug("Inside products details per companyid"+companyId);
+		
+		return locationService.getProductDetailPerCompanyService(companyId);
 	}
 		
 	/**

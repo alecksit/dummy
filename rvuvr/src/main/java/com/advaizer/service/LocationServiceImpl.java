@@ -4,6 +4,7 @@
 package com.advaizer.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
@@ -11,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.advaizer.model.Product;
 import com.advaizer.repository.LocationRepository;
 
 /**
@@ -166,6 +168,17 @@ LOGGER.debug("inside getCompaniesPerStateService");
 LOGGER.debug("inside getProductRatingsPerLocationService");
 		
 		return locationRepository.getProductRatingPerLocationRepository(locationId);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#getProductDetailPerCompanyService(int)
+	 */
+	@Override
+	public List<Product> getProductDetailPerCompanyService(final int companyId) {
+		// TODO Auto-generated method stub
+LOGGER.debug("inside getProductDetailsPerCompanyService");
+		
+		return locationRepository.getProductDetailPerCompanyRepository(companyId);
 	}
 
 	

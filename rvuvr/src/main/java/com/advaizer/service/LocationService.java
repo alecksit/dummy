@@ -4,7 +4,10 @@
 package com.advaizer.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import com.advaizer.model.Product;
 
 /**
  * @author smruti
@@ -76,6 +79,11 @@ public interface LocationService {
 	 * @return
 	 */
 	public Map<Integer, String> getProductRatingPerLocationService(int locationId);
+	/**
+	 * @param companyId
+	 * @return
+	 */
+	public List<Product> getProductDetailPerCompanyService(int companyId);
 
 
 }

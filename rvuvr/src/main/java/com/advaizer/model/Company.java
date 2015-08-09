@@ -13,6 +13,7 @@ public class Company {
 	String companyName;
 	int companyLocation;
 	int parentCompanyId;
+	int categoryId;
 	/**
 	 * @return the companyid
 	 */

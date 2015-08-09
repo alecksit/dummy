@@ -5,8 +5,10 @@ package com.advaizer.repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
@@ -18,6 +20,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.advaizer.enums.LocationColumns;
+import com.advaizer.model.Product;
 import com.advaizer.query.BasicFilterQueryBuilder;
 
 /**
@@ -423,6 +426,42 @@ final String query = BasicFilterQueryBuilder.getProductRatingPerLocationQuery(lo
 		}				
 		LOGGER.debug("Products Rating found : " + productratingList.size());
 		return productratingList;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#getProductDetailPerCompanyRepository(int)
+	 */
+	@Override
+	public List<Product> getProductDetailPerCompanyRepository(final int companyId) {
+		// TODO Auto-generated method stub
+final String query = BasicFilterQueryBuilder.getProductDetailPerCompanyQuery(companyId).toString();
+		
+		LOGGER.debug("Getting all Products Ratings ");
+		LOGGER.debug("Products query : " + query);
+		
+		 List<Product> productList = new ArrayList<Product>();
+
+		try {
+			productList=jdbcTemplate.query(query, new RowMapper<Product>(){
+				@Override
+				public Product mapRow(final ResultSet rs, final int rowNumber) throws SQLException {
+					
+					final Product productDetail=new Product();
+					productDetail.setProductId(rs.getInt("productid"));
+					productDetail.setProductName(rs.getString("productname"));
+					productDetail.setBrandId(rs.getInt("brandid"));
+					productDetail.setProductName(rs.getString("brandname"));
+					productDetail.setBrandId(rs.getInt("categoryid"));
+					productDetail.setProductName(rs.getString("categoryname"));																		
+					return productDetail;
+				}
+			});
+		} catch(final DataAccessException dae) {
+			LOGGER.error("Error occurred while getting all trackers: ", dae);
+			
+		}				
+		LOGGER.debug("Products Details found : " + productList.size());
+		return productList;
 	}
 
 	/* (non-Javadoc)
