@@ -10,21 +10,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Responisve, Bootstrap, Html5, Css3, Blog, Classified, Ads, Simple, Clean ">
 <!-- CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/rvuvr/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <!-- Google Webfont -->
 <link href='https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans:400,300,400italic,600,700,800,800italic' rel='stylesheet' type='text/css'>
 <!-- Main Css -->
-<link href="css/color1.css" rel="stylesheet" media="screen" id="color">
-<link href="css/demo.css" rel="stylesheet" >
+<link href="/rvuvr/css/color1.css" rel="stylesheet" media="screen" id="color">
+<link href="/rvuvr/css/demo.css" rel="stylesheet" >
 <!-- Font Icon -->
-<link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+<link href="/rvuvr/css/font-awesome.min.css" rel="stylesheet" media="screen">
 <!-- Include only for MapSearch Page -->
-<link rel="stylesheet" href="css/ui.css"/>
+<link rel="stylesheet" href="/rvuvr/css/ui.css"/>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script> 
+      <script src="/rvuvr/js/html5shiv.js"></script>
+      <script src="/rvuvr/js/respond.min.js"></script> 
      <![endif]-->
 </head>
 <body>
@@ -51,43 +51,43 @@
   <a href="javascript: void(0)" title="switch styling" id="color1">color1</a> <a href="javascript: void(0)" title="switch styling" id="color2">color2</a> <a href="javascript: void(0)" title="switch styling" id="color3">color3</a> <a href="javascript: void(0)" title="switch styling" id="color4">color4</a> <a href="javascript: void(0)" title="switch styling" id="color5">color5</a> <a href="javascript: void(0)" title="switch styling" id="color6">color6</a> <a href="javascript: void(0)" title="switch styling" id="color7">color7</a> <a href="javascript: void(0)" title="switch styling" id="color8">color8</a> <a href="javascript: void(0)" title="switch styling" id="color9">color9</a> <a href="javascript: void(0)" title="switch styling" id="color10">color10</a> <a href="javascript: void(0)" title="switch styling" id="color11">color11</a> <a href="javascript: void(0)" title="switch styling" id="color12">color12</a> <a href="javascript: void(0)" title="switch styling" id="color13">color13</a> <a href="javascript: void(0)" title="switch styling" id="color14">color14</a> <a href="javascript: void(0)" title="switch styling" id="color15">color15</a> <a href="javascript: void(0)" title="switch styling" id="color16">color16</a> <a href="javascript: void(0)" title="switch styling" id="color17">color17</a> <a href="javascript: void(0)" title="switch styling" id="color18">color18</a> <a href="javascript: void(0)" title="switch styling" id="color19">color19</a> <a href="javascript: void(0)" title="switch styling" id="color20">color20</a> </div>
 <!-- Placed at the end of the document so the pages load faster --> 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="js/jquery.js"></script> 
-<script src="js/jquery-migrate-1.2.1.js"></script> 
+<script src="/rvuvr/js/jquery.js"></script> 
+<script src="/rvuvr/js/jquery-migrate-1.2.1.js"></script> 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="js/bootstrap.min.js"></script> 
+<script src="/rvuvr/js/bootstrap.min.js"></script> 
 <!-- include jQuery + carouFredSel plugin --> 
-<script src="js/jquery.carouFredSel-6.2.1-packed.js"></script> 
+<script src="/rvuvr/js/jquery.carouFredSel-6.2.1-packed.js"></script> 
 <!-- Flex slider Blog--> 
-<script src="js/jquery.flexslider.js"></script> 
+<script src="/rvuvr/js/jquery.flexslider.js"></script> 
 <!-- Jquery zoom on detail page--> 
-<script  src="js/zoomsl-3.0.min.js"></script> 
+<script  src="/rvuvr/js/zoomsl-3.0.min.js"></script> 
 <!-- Jquery Validation--> 
-<script  type="text/javascript" src="js/jquery.validate.js"></script> 
+<script  type="text/javascript" src="/rvuvr/js/jquery.validate.js"></script> 
 <!-- Jquery Latest Tweet--> 
-<script type="text/javascript" src="js/jquery.tweet.js"></script> 
+<script type="text/javascript" src="/rvuvr/js/jquery.tweet.js"></script> 
 <!-- Jquery Countdown--> 
-<script type="text/javascript" src="js/jquery.countdown.js"></script> 
+<script type="text/javascript" src="/rvuvr/js/jquery.countdown.js"></script> 
 <!-- Social --> 
-<script type="text/javascript" src="js/socialstream.jquery.js"></script> 
+<script type="text/javascript" src="/rvuvr/js/socialstream.jquery.js"></script> 
 <!-- Jquery Map --> 
 <!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> --> 
-<script type="text/javascript" src="js/jquery.gmap.js"></script> 
+<script type="text/javascript" src="/rvuvr/js/jquery.gmap.js"></script> 
 <!-- Sparkline --> 
-<script type="text/javascript" src="js/jquery.sparkline.min.js"></script> 
+<script type="text/javascript" src="/rvuvr/js/jquery.sparkline.min.js"></script> 
 <!-- Cloud --> 
-<script type="text/javascript" src="js/jqcloud-1.0.4.js"></script> 
+<script type="text/javascript" src="/rvuvr/js/jqcloud-1.0.4.js"></script> 
 <!-- Ratina View --> 
-<script type="text/javascript" src="js/retina-1.1.0.min.js"></script> 
+<script type="text/javascript" src="/rvuvr/js/retina-1.1.0.min.js"></script> 
 <!-- Custom --> 
-<script src="js/custom.js"></script> 
+<script src="/rvuvr/js/custom.js"></script> 
 <!-- Include only for MapSearch Page --> 
-<script src="js/jquery.ui.core.min.js"></script> 
-<script src="js/jquery.ui.widget.min.js"></script> 
-<script src="js/jquery.ui.position.min.js"></script> 
-<script src="js/jquery.ui.autocomplete.min.js"></script> 
-<script src="js/map.js"></script> 
+<script src="/rvuvr/js/jquery.ui.core.min.js"></script> 
+<script src="/rvuvr/js/jquery.ui.widget.min.js"></script> 
+<script src="/rvuvr/js/jquery.ui.position.min.js"></script> 
+<script src="/rvuvr/js/jquery.ui.autocomplete.min.js"></script> 
+<script src="/rvuvr/js/map.js"></script> 
 <!-- Style Switcher --> 
-<script type="text/javascript" src="js/jquery.style-switcher.js"></script> 
+<script type="text/javascript" src="/rvuvr/js/jquery.style-switcher.js"></script> 
 <script type="text/javascript">
 $(document).ready(function() {
 	$('#styleswitch').styleSwitcher();
