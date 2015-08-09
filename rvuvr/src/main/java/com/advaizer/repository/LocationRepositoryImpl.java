@@ -38,7 +38,7 @@ private static Logger LOGGER = LogManager.getLogger(LocationRepositoryImpl.class
 	@Override
 	public HashMap<Integer, String> getAllStatesRepository() {
 		// TODO Auto-generated method stub
-		final String query = BasicFilterQueryBuilder.getAllStateQuery(new StringBuilder(" "+LocationColumns.ISACTIVE+ "=1 ")).toString();
+		final String query = BasicFilterQueryBuilder.getAllStateQuery(new StringBuilder(" " )).toString();
 					
 			LOGGER.debug("Getting all States ");
 			LOGGER.debug("States query : " + query);

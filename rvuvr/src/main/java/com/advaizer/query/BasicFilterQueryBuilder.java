@@ -14,7 +14,7 @@ public class BasicFilterQueryBuilder {
 		final StringBuilder query=new StringBuilder("");
 		
 		query.append("Select ").append(LocationColumns.STATEID).append(" stateid,")
-		.append(LocationColumns.STATENAME).append(" statename from ").append(Relation.STATE).append(" where ").append(whereClause);
+		.append(LocationColumns.STATENAME).append(" statename from ").append(Relation.STATE).append("  ").append(whereClause);
 		
 		return query;		
 	}
