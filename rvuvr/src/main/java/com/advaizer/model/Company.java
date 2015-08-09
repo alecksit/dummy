@@ -9,59 +9,57 @@ package com.advaizer.model;
  */
 public class Company {
 	
-	int companyid;
-	String companyname;
-	int companylocation;
-	int parentcompanyid;
+	int companyId;
+	String companyName;
+	int companyLocation;
+	int parentCompanyId;
 	/**
 	 * @return the companyid
 	 */
-	public int getCompanyid() {
-		return companyid;
+	public int getCompanyId() {
+		return companyId;
 	}
 	/**
 	 * @param companyid the companyid to set
 	 */
-	public void setCompanyid(final int companyid) {
-		this.companyid = companyid;
+	public void setCompanyId(final int companyId) {
+		this.companyId = companyId;
 	}
 	/**
 	 * @return the companyname
 	 */
-	public String getCompanyname() {
-		return companyname;
+	public String getCompanyName() {
+		return companyName;
 	}
 	/**
 	 * @param companyname the companyname to set
 	 */
-	public void setCompanyname(final String companyname) {
-		this.companyname = companyname;
+	public void setCompanyName(final String companyName) {
+		this.companyName = companyName;
 	}
 	/**
 	 * @return the companylocation
 	 */
-	public int getCompanylocation() {
-		return companylocation;
+	public int getCompanyLocation() {
+		return companyLocation;
 	}
 	/**
 	 * @param companylocation the companylocation to set
 	 */
-	public void setCompanylocation(final int companylocation) {
-		this.companylocation = companylocation;
+	public void setCompanyLocation(final int companyLocation) {
+		this.companyLocation = companyLocation;
 	}
 	/**
 	 * @return the parentcompanyid
 	 */
-	public int getParentcompanyid() {
-		return parentcompanyid;
+	public int getParentCompanyId() {
+		return parentCompanyId;
 	}
 	/**
 	 * @param parentcompanyid the parentcompanyid to set
 	 */
-	public void setParentcompanyid(final int parentcompanyid) {
-		this.parentcompanyid = parentcompanyid;
+	public void setParentCompanyId(final int parentCompanyId) {
+		this.parentCompanyId = parentCompanyId;
 	}
 	
-	
-
 }

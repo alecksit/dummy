@@ -8,59 +8,57 @@ package com.advaizer.model;
  *
  */
 public class Product {
-	int productid;
-	String productname;
-	int brandid;
-	int categoryid;
+	int productId;
+	String productName;
+	int brandId;
+	int categoryId;
 	/**
 	 * @return the productid
 	 */
-	public int getProductid() {
-		return productid;
+	public int getProductId() {
+		return productId;
 	}
 	/**
 	 * @param productid the productid to set
 	 */
-	public void setProductid(final int productid) {
-		this.productid = productid;
+	public void setProductId(final int productId) {
+		this.productId = productId;
 	}
 	/**
 	 * @return the productname
 	 */
-	public String getProductname() {
-		return productname;
+	public String getProductName() {
+		return productName;
 	}
 	/**
 	 * @param productname the productname to set
 	 */
-	public void setProductname(final String productname) {
-		this.productname = productname;
+	public void setProductName(final String productName) {
+		this.productName = productName;
 	}
 	/**
 	 * @return the brandid
 	 */
-	public int getBrandid() {
-		return brandid;
+	public int getBrandId() {
+		return brandId;
 	}
 	/**
 	 * @param brandid the brandid to set
 	 */
-	public void setBrandid(final int brandid) {
-		this.brandid = brandid;
+	public void setBrandId(final int brandId) {
+		this.brandId = brandId;
 	}
 	/**
 	 * @return the categoryid
 	 */
-	public int getCategoryid() {
-		return categoryid;
+	public int getCategoryId() {
+		return categoryId;
 	}
 	/**
 	 * @param categoryid the categoryid to set
 	 */
-	public void setCategoryid(final int categoryid) {
-		this.categoryid = categoryid;
+	public void setCategoryId(final int categoryId) {
+		this.categoryId = categoryId;
 	}
-	
-	
-
+		
 }
