@@ -18,7 +18,7 @@ public enum Relation {
 	AREA("areainfo"),
 	PRODUCT("productinfo"),
 	LOCATION("locationinfo"),
-	
+	CATEGORY("categoryinfo"),
 	COMPANY("companyinfo"),
 	BRAND("brandinfo"),
 	PRODUCTRATINGS("productratings"),
