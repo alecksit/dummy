@@ -168,6 +168,15 @@ LOGGER.debug("inside getProductRatingsPerLocationService");
 		return locationRepository.getProductRatingPerLocationRepository(locationId);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#saveBrandDetails(java.util.Map)
+	 */
+	@Override
+	public Map<String, String> saveBrandDetails(final Map<String, Object> brandData) {
+		 
+		return locationRepository.saveBrandDetails(brandData);
+	}
+
 	
 
 }

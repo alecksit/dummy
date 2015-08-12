@@ -178,5 +178,22 @@ final StringBuilder query=new StringBuilder("");
 		.append(LocationColumns.LOCATIONID).append("=").append(locationId);
 		return query;
 	}
+	
+
+	public static Object addBrandDetailsQuery( )  {	
+	
+		final StringBuilder query=new StringBuilder("");
+		query.append(" insert into ");
+	 
+		query.append(Relation.BRAND);
+	 
+		
+		query.append(" (brandname,brandtype,companyid )")
+		.append(" values(?,?,? ) ");
+		
+		 return query;
+						
+}
+	
 
 }

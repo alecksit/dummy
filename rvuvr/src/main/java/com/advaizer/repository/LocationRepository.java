@@ -87,6 +87,12 @@ public interface LocationRepository {
 	public Map<Integer, String> getProductRatingPerLocationRepository(int locationId);
 
 	/**
+	 * @param brandData
+	 * @return
+	 */
+	public Map<String, String> saveBrandDetails(Map<String, Object> brandData);
+
+	/**
 	 * @return
 	 */
 
