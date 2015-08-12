@@ -31,7 +31,6 @@ public class AdminController {
 	
 	private static Logger LOGGER = LogManager.getLogger(LocationRepositoryImpl.class.getName());
 	
-
 	
 	/** The trend service. */
 	@Autowired
