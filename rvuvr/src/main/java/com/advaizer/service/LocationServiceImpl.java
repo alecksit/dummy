@@ -171,7 +171,15 @@ LOGGER.debug("inside getProductRatingsPerLocationService");
 	}
 
 	/* (non-Javadoc)
-	 * @see com.advaizer.service.LocationService#getProductDetailPerCompanyService(int)
+<<<<<<< HEAD
+	 * @see com.advaizer.service.LocationService#saveBrandDetails(java.util.Map)
+	 */
+	@Override
+	public Map<String, String> saveBrandDetails(final Map<String, Object> brandData) {
+		 
+		return locationRepository.saveBrandDetails(brandData);
+	}
+	 /* @see com.advaizer.service.LocationService#getProductDetailPerCompanyService(int)
 	 */
 	@Override
 	public List<Product> getProductDetailPerCompanyService(final int companyId) {
@@ -179,7 +187,7 @@ LOGGER.debug("inside getProductRatingsPerLocationService");
 LOGGER.debug("inside getProductDetailsPerCompanyService");
 		
 		return locationRepository.getProductDetailPerCompanyRepository(companyId);
-	}
+ 	}
 
 	
 

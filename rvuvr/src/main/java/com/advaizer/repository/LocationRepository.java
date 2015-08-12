@@ -90,11 +90,17 @@ public interface LocationRepository {
 	public Map<Integer, String> getProductRatingPerLocationRepository(int locationId);
 
 	/**
-	 * @param companyId
+<<<<<<< HEAD
+	 * @param brandData
+	 * @return
+	 */
+	public Map<String, String> saveBrandDetails(Map<String, Object> brandData);
+ 
+	 /* @param companyId
 	 * @return
 	 */
 	public List<Product> getProductDetailPerCompanyRepository(int companyId);
-
+ 
 	/**
 	 * @return
 	 */

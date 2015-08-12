@@ -80,10 +80,16 @@ public interface LocationService {
 	 */
 	public Map<Integer, String> getProductRatingPerLocationService(int locationId);
 	/**
-	 * @param companyId
+<<<<<<< HEAD
+	 * @param brandData
+	 * @return
+	 */
+	public Map<String, String> saveBrandDetails(Map<String, Object> brandData);
+ 
+	 /* @param companyId
 	 * @return
 	 */
 	public List<Product> getProductDetailPerCompanyService(int companyId);
-
+ 
 
 }

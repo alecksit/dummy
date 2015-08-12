@@ -3,8 +3,11 @@
  */
 package com.advaizer.repository;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -16,11 +19,15 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.advaizer.enums.LocationColumns;
 import com.advaizer.model.Product;
+import com.advaizer.model.Tracker;
 import com.advaizer.query.BasicFilterQueryBuilder;
 
 /**
@@ -429,7 +436,53 @@ final String query = BasicFilterQueryBuilder.getProductRatingPerLocationQuery(lo
 	}
 
 	/* (non-Javadoc)
-	 * @see com.advaizer.repository.LocationRepository#getProductDetailPerCompanyRepository(int)
+<<<<<<< HEAD
+	 * @see com.advaizer.repository.LocationRepository#saveBrandDetails(java.util.Map)
+	 */
+	@Override
+	public Map<String, String> saveBrandDetails(final Map<String, Object> brandData) {
+		final Tracker tracker = new Tracker();
+		 
+		final StringBuilder query = new StringBuilder();
+		 LOGGER.debug("Getting query for saving track details");
+
+		 
+		 query=(StringBuilder) BasicFilterQueryBuilder.addBrandDetailsQuery();
+
+	 LOGGER.debug(" query : " + query.toString());
+
+		// final int trackId = jdbcTemplate.update(query.toString(),
+		// parameterMap.values().toArray());
+		final KeyHolder keyHolder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			@Override
+			public PreparedStatement createPreparedStatement(
+					final Connection connection) throws SQLException {
+				final PreparedStatement ps = connection.prepareStatement(
+						query.toString(), Statement.RETURN_GENERATED_KEYS);
+				 
+				ps.setString(1, parameterArray[0].toString()); // name
+				ps.setInt(2, parameterArray[1].toString()); // filterString
+				ps.setInt(3, parameterArray[2].toString()); // start_old_timeformat
+				 
+				return ps;
+			}
+		}, keyHolder);
+		// LOGGER.debug(trackId + " Tracker created ");
+		final long trackerId = Long.valueOf(keyHolder.getKeyList().get(0)
+				.get("id").toString());
+
+		if (trackerId >= 1) {
+			tracker.setId(trackerId);
+			tracker.setTrackName(trackName);
+			// tracker.setFilterLabel(filterString.toString());
+			tracker.setFilterLabel(filterLabels);
+			tracker.setFilterString(filterJson);
+		}
+
+		return tracker.convertToMap();
+	}
+	 /* @see com.advaizer.repository.LocationRepository#getProductDetailPerCompanyRepository(int)
 	 */
 	@Override
 	public List<Product> getProductDetailPerCompanyRepository(final int companyId) {
@@ -462,7 +515,7 @@ final String query = BasicFilterQueryBuilder.getProductDetailPerCompanyQuery(com
 		}				
 		LOGGER.debug("Products Details found : " + productList.size());
 		return productList;
-	}
+ 	}
 
 	/* (non-Javadoc)
 	 * @see com.advaizer.repository.LocationRepository#getMajorZoneAreaRepository(int)
