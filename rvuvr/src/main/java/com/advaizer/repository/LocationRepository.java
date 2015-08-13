@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.advaizer.model.Product;
+import com.advaizer.model.ProductBrand;
 
 /**
  * @author smruti
@@ -94,7 +95,7 @@ public interface LocationRepository {
 	 * @param brandData
 	 * @return
 	 */
-	public Map<String, String> saveBrandDetails(Map<String, Object> brandData);
+	public Map<String, String> saveBrandDetails(final ProductBrand brandData);
  
 	 /* @param companyId
 	 * @return
