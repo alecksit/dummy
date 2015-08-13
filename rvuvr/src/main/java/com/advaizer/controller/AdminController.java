@@ -125,8 +125,7 @@ public class AdminController {
 	public @ResponseBody Map<String,String> addBrand(  
 			@RequestBody final Map<String,Object> brandData) 
 			  {
-		
-		   
+		 
 		final Map<String, String> brandMap =  locationService.saveBrandDetails(brandData);
 		
 		return brandMap;
