@@ -21,6 +21,7 @@ public enum Relation {
 	CATEGORY("categoryinfo"),
 	COMPANY("companyinfo"),
 	BRAND("brandinfo"),
+	USER("userinfo"),
 	PRODUCTRATINGS("productratings"),
 	
 	/** The attribute category. */

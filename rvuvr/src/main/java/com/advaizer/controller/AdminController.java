@@ -17,7 +17,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.advaizer.model.Area;
+import com.advaizer.model.Category;
+import com.advaizer.model.Company;
+import com.advaizer.model.Location;
+import com.advaizer.model.Product;
 import com.advaizer.model.ProductBrand;
+import com.advaizer.model.ProductRating;
+import com.advaizer.model.User;
 import com.advaizer.repository.LocationRepositoryImpl;
 import com.advaizer.service.LocationService;
 
@@ -132,6 +139,83 @@ public class AdminController {
  
 		
 		 return brandMap; 
+	}
+	
+	@RequestMapping(value="/add/area", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> addArea(  
+			 final Area areaData) 
+			  {
+ 
+		
+		   System.out.print(areaData.getAreaId()+""+areaData.getStateId()+""+areaData.getAreaName());
+		  final Map<String, String> areaMap =  locationService.saveAreaDetails(areaData);
+ 
+		
+		 return areaMap; 
+	}
+	@RequestMapping(value="/add/category", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> addCategory(  
+			 final Category categoryData) 
+			  {
+ 
+		
+		   System.out.print(categoryData.getCategoryId()+""+categoryData.getCategoryName()+""+categoryData.getParentCategoryId());
+		  final Map<String, String> categoryMap =  locationService.saveCategoryDetails(categoryData);
+ 
+		
+		 return categoryMap; 
+	}
+	@RequestMapping(value="/add/company", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> addCompany(  
+			 final Company companyData) 
+			  {
+ 
+		
+		   System.out.print(companyData.getCompanyId()+""+companyData.getCompanyName()+""+companyData.getCompanyLocation()+""+companyData.getParentCompanyId());
+		  final Map<String, String> companyMap =  locationService.saveCompanyDetails(companyData);
+ 
+		
+		 return companyMap; 
+	}
+	@RequestMapping(value="/add/location", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> addLocation(  
+			 final Location locationData) 
+			  {
+ 
+		   System.out.print(locationData.getLocationId()+""+locationData.getAreaId()+""+locationData.getLocationName());
+		  final Map<String, String> locationMap =  locationService.saveLocationDetails(locationData);
+ 
+		 return locationMap; 
+	}
+	@RequestMapping(value="/add/product", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> addProduct(  
+			 final Product productData) 
+			  {
+ 
+		   System.out.print(productData.getProductId()+""+productData.getProductName()+""+productData.getBrandId()+""+productData.getCategoryId());
+		  final Map<String, String> productMap =  locationService.saveProductDetails(productData);
+ 
+		 return productMap; 
+	}
+	@RequestMapping(value="/add/productratings", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> addProductRating(  
+			 final ProductRating productRatingData) 
+			  {
+ 
+		   System.out.print(productRatingData.getRatingId()+""+productRatingData.getRatingPoint()+""+productRatingData.getRatingId()+""+productRatingData.getUserId());
+		  final Map<String, String> productRatingMap =  locationService.saveProductDetails(productRatingData);
+ 
+		 return productRatingMap; 
+	}
+	@RequestMapping(value="/add/user", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> addUser(  
+			 final User userData) 
+			  {
+ 
+		   System.out.print(userData.getUserId()+""+userData.getUserName()+""+userData.getUserPass());
+		  final Map<String, String> userMap =  locationService.saveUserDetails(userData);
+ 
+		 return userMap; 
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value={"/states"})

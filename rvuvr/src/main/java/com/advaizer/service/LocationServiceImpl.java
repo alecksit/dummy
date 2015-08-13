@@ -12,8 +12,14 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.advaizer.model.Area;
+import com.advaizer.model.Category;
+import com.advaizer.model.Company;
+import com.advaizer.model.Location;
 import com.advaizer.model.Product;
 import com.advaizer.model.ProductBrand;
+import com.advaizer.model.ProductRating;
+import com.advaizer.model.User;
 import com.advaizer.repository.LocationRepository;
 
 /**
@@ -189,6 +195,69 @@ LOGGER.debug("inside getProductDetailsPerCompanyService");
 		
 		return locationRepository.getProductDetailPerCompanyRepository(companyId);
  	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#saveAreaDetails(com.advaizer.model.Area)
+	 */
+	@Override
+	public Map<String, String> saveAreaDetails(final Area areaData) {
+		// TODO Auto-generated method stub
+		return locationRepository.saveAreaDetails(areaData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#saveCategoryDetails(com.advaizer.model.Category)
+	 */
+	@Override
+	public Map<String, String> saveCategoryDetails(final Category categoryData) {
+		// TODO Auto-generated method stub
+		return locationRepository.saveCategoryDetails(categoryData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#saveCompanyDetails(com.advaizer.model.Company)
+	 */
+	@Override
+	public Map<String, String> saveCompanyDetails(final Company companyData) {
+		// TODO Auto-generated method stub
+		return locationRepository.saveCompanyDetails(companyData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#saveCompanyDetails(com.advaizer.model.Location)
+	 */
+	@Override
+	public Map<String, String> saveLocationDetails(final Location locationData) {
+		// TODO Auto-generated method stub
+		return locationRepository.saveLocationDetails(locationData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#saveProductDetails(com.advaizer.model.Product)
+	 */
+	@Override
+	public Map<String, String> saveProductDetails(final Product productData) {
+		// TODO Auto-generated method stub
+		return locationRepository.saveProductDetails(productData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#saveProductDetails(com.advaizer.model.ProductRating)
+	 */
+	@Override
+	public Map<String, String> saveProductDetails(final ProductRating productRatingData) {
+		// TODO Auto-generated method stub
+		return locationRepository.saveProductRatingDetails(productRatingData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#saveUserDetails(com.advaizer.model.User)
+	 */
+	@Override
+	public Map<String, String> saveUserDetails(final User userData) {
+		// TODO Auto-generated method stub
+		return locationRepository.saveUserDetails(userData);
+	}
 
 	
 

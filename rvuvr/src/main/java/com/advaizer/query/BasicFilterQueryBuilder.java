@@ -195,7 +195,6 @@ final StringBuilder query=new StringBuilder("");
 						
 }
 	
-
 	/**
 	 * @param companyId
 	 * @return
@@ -215,6 +214,125 @@ final StringBuilder query=new StringBuilder("");
 		.append(LocationColumns.COMPANYID).append("=").append(companyId);
 		
 		return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder addAreaDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" insert into ");
+	 
+		query.append(Relation.AREA);
+	 
+		
+		query.append(" (stateid,areaname )")
+		.append(" values(?,?) ");
+		
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder addCategoryDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" insert into ");
+	 
+		query.append(Relation.CATEGORY);
+	 
+		
+		query.append(" (parentcategoryid,categoryname )")
+		.append(" values(?,?) ");
+		
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder addCompanyDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" insert into ");
+	 
+		query.append(Relation.COMPANY);
+	 
+		
+		query.append(" (companyname,companylocation,parentcompanyid )")
+		.append(" values(?,?,?) ");
+		
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder addLocationDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" insert into ");
+	 
+		query.append(Relation.LOCATION);
+	 
+		
+		query.append(" (areaid,locationname )")
+		.append(" values(?,?) ");
+		
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder addProductDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" insert into ");
+	 
+		query.append(Relation.PRODUCT);
+	 
+		
+		query.append(" (productname,brandid,categoryid )")
+		.append(" values(?,?,?) ");
+		
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder addProductRatingDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" insert into ");
+	 
+		query.append(Relation.PRODUCTRATINGS);
+	 
+		
+		query.append(" (ratingpoint,productid,userid )")
+		.append(" values(?,?,?) ");
+		
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder addUserDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" insert into ");
+	 
+		query.append(Relation.USER);
+	 
+		
+		query.append(" (username,userpass )")
+		.append(" values(?,?) ");
+		
+		 return query;
 	}
 
 }

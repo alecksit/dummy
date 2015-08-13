@@ -26,8 +26,14 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.advaizer.enums.LocationColumns;
+import com.advaizer.model.Area;
+import com.advaizer.model.Category;
+import com.advaizer.model.Company;
+import com.advaizer.model.Location;
 import com.advaizer.model.Product;
 import com.advaizer.model.ProductBrand;
+import com.advaizer.model.ProductRating;
+import com.advaizer.model.User;
 import com.advaizer.query.BasicFilterQueryBuilder;
 
 /**
@@ -444,8 +450,7 @@ final String query = BasicFilterQueryBuilder.getProductRatingPerLocationQuery(lo
 		final HashMap<String,String> brandIdMap = new HashMap<String,String>();
 		 
 		  LOGGER.debug("Getting query for saving track details");
-
-		 
+	 
 		 final StringBuilder query =(StringBuilder) BasicFilterQueryBuilder.addBrandDetailsQuery();
 
 	 LOGGER.debug(" query : " + query.toString());
@@ -509,6 +514,283 @@ final String query = BasicFilterQueryBuilder.getProductDetailPerCompanyQuery(com
 		LOGGER.debug("Products Details found : " + productList.size());
 		return productList;
  	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#saveAreaDetails(com.advaizer.model.Area)
+	 */
+	@Override
+	public Map<String, String> saveAreaDetails(final Area areaData) {
+		// TODO Auto-generated method stub
+		final HashMap<String,String> areaIdMap = new HashMap<String,String>();
+		 
+		  LOGGER.debug("Getting query for saving track details");
+	 
+		 final StringBuilder query =BasicFilterQueryBuilder.addAreaDetailsQuery();
+
+	 LOGGER.debug(" query : " + query.toString());
+
+		// final int trackId = jdbcTemplate.update(query.toString(),
+		// parameterMap.values().toArray());
+		final KeyHolder keyHolder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			@Override
+			public PreparedStatement createPreparedStatement(
+					final Connection connection) throws SQLException {
+				final PreparedStatement ps = connection.prepareStatement(
+						query.toString(), Statement.RETURN_GENERATED_KEYS);
+				 
+				ps.setInt(1,  areaData.getStateId() ); // filterString
+				ps.setString(2, areaData.getAreaName().toString()); // name
+				 
+				return ps;
+			}
+		}, keyHolder);
+		// LOGGER.debug(trackId + " Tracker created ");
+		final int areaId = Integer.valueOf(keyHolder.getKeyList().get(0)
+				.get("areaid").toString());
+
+		areaIdMap.put("areaId", areaId+" ");
+
+		return areaIdMap;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#saveCategoryDetails(com.advaizer.model.Category)
+	 */
+	@Override
+	public Map<String, String> saveCategoryDetails(final Category categoryData) {
+		// TODO Auto-generated method stub
+		final HashMap<String,String> categoryIdMap = new HashMap<String,String>();
+		 
+		  LOGGER.debug("Getting query for saving track details");
+	 
+		 final StringBuilder query =BasicFilterQueryBuilder.addCategoryDetailsQuery();
+
+	 LOGGER.debug(" query : " + query.toString());
+
+		// final int trackId = jdbcTemplate.update(query.toString(),
+		// parameterMap.values().toArray());
+		final KeyHolder keyHolder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			@Override
+			public PreparedStatement createPreparedStatement(
+					final Connection connection) throws SQLException {
+				final PreparedStatement ps = connection.prepareStatement(
+						query.toString(), Statement.RETURN_GENERATED_KEYS);
+				 
+				ps.setInt(1,  categoryData.getParentCategoryId() ); // filterString
+				ps.setString(2, categoryData.getCategoryName().toString()); // name
+				 
+				return ps;
+			}
+		}, keyHolder);
+		// LOGGER.debug(trackId + " Tracker created ");
+		final int categoryId = Integer.valueOf(keyHolder.getKeyList().get(0)
+				.get("categoryid").toString());
+
+		categoryIdMap.put("categoryId", categoryId+" ");
+
+		return categoryIdMap;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#saveCompanyDetails(com.advaizer.model.Company)
+	 */
+	@Override
+	public Map<String, String> saveCompanyDetails(final Company companyData) {
+		// TODO Auto-generated method stub
+		final HashMap<String,String> companyIdMap = new HashMap<String,String>();
+		 
+		  LOGGER.debug("Getting query for saving track details");
+	 
+		 final StringBuilder query =BasicFilterQueryBuilder.addCompanyDetailsQuery();
+
+	 LOGGER.debug(" query : " + query.toString());
+
+		// final int trackId = jdbcTemplate.update(query.toString(),
+		// parameterMap.values().toArray());
+		final KeyHolder keyHolder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			@Override
+			public PreparedStatement createPreparedStatement(
+					final Connection connection) throws SQLException {
+				final PreparedStatement ps = connection.prepareStatement(
+						query.toString(), Statement.RETURN_GENERATED_KEYS);
+				 
+				ps.setString(1, companyData.getCompanyName().toString()); // filterString
+				ps.setInt(2, companyData.getCompanyLocation()); //
+				ps.setInt(3, companyData.getParentCompanyId());
+				 
+				return ps;
+			}
+		}, keyHolder);
+		// LOGGER.debug(trackId + " Tracker created ");
+		final int companyId = Integer.valueOf(keyHolder.getKeyList().get(0)
+				.get("companyid").toString());
+
+		companyIdMap.put("companyId", companyId+" ");
+
+		return companyIdMap;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#saveLocationDetails(com.advaizer.model.Location)
+	 */
+	@Override
+	public Map<String, String> saveLocationDetails(final Location locationData) {
+		// TODO Auto-generated method stub
+		final HashMap<String,String> locationIdMap = new HashMap<String,String>();
+		 
+		  LOGGER.debug("Getting query for saving track details");
+	 
+		 final StringBuilder query =BasicFilterQueryBuilder.addLocationDetailsQuery();
+
+	 LOGGER.debug(" query : " + query.toString());
+
+		// final int trackId = jdbcTemplate.update(query.toString(),
+		// parameterMap.values().toArray());
+		final KeyHolder keyHolder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			@Override
+			public PreparedStatement createPreparedStatement(
+					final Connection connection) throws SQLException {
+				final PreparedStatement ps = connection.prepareStatement(
+						query.toString(), Statement.RETURN_GENERATED_KEYS);
+				 
+				ps.setInt(1, locationData.getAreaId()); // filterString
+				ps.setString(2,locationData.getLocationName().toString() );
+				
+				 
+				return ps;
+			}
+		}, keyHolder);
+		// LOGGER.debug(trackId + " Tracker created ");
+		final int locationId = Integer.valueOf(keyHolder.getKeyList().get(0)
+				.get("locationid").toString());
+
+		locationIdMap.put("locationId", locationId+" ");
+
+		return locationIdMap;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#saveProductDetails(com.advaizer.model.Product)
+	 */
+	@Override
+	public Map<String, String> saveProductDetails(final Product productData) {
+		// TODO Auto-generated method stub
+		final HashMap<String,String> productIdMap = new HashMap<String,String>();
+		 
+		  LOGGER.debug("Getting query for saving track details");
+	 
+		 final StringBuilder query =BasicFilterQueryBuilder.addProductDetailsQuery();
+
+	 LOGGER.debug(" query : " + query.toString());
+
+		// final int trackId = jdbcTemplate.update(query.toString(),
+		// parameterMap.values().toArray());
+		final KeyHolder keyHolder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			@Override
+			public PreparedStatement createPreparedStatement(
+					final Connection connection) throws SQLException {
+				final PreparedStatement ps = connection.prepareStatement(
+						query.toString(), Statement.RETURN_GENERATED_KEYS);
+				 
+				ps.setString(1, productData.getProductName().toString()); // filterString
+				ps.setInt(2,productData.getBrandId() );
+				ps.setInt(3,productData.getCategoryId() );
+							 
+				return ps;
+			}
+		}, keyHolder);
+		// LOGGER.debug(trackId + " Tracker created ");
+		final int productId = Integer.valueOf(keyHolder.getKeyList().get(0)
+				.get("productid").toString());
+
+		productIdMap.put("productId", productId+" ");
+
+		return productIdMap;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#saveProductRatingDetails(com.advaizer.model.ProductRating)
+	 */
+	@Override
+	public Map<String, String> saveProductRatingDetails(final ProductRating productRatingData) {
+		// TODO Auto-generated method stub
+		final HashMap<String,String> productRatingIdMap = new HashMap<String,String>();
+		 
+		  LOGGER.debug("Getting query for saving track details");
+	 
+		 final StringBuilder query =BasicFilterQueryBuilder.addProductRatingDetailsQuery();
+
+	 LOGGER.debug(" query : " + query.toString());
+
+		// final int trackId = jdbcTemplate.update(query.toString(),
+		// parameterMap.values().toArray());
+		final KeyHolder keyHolder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			@Override
+			public PreparedStatement createPreparedStatement(
+					final Connection connection) throws SQLException {
+				final PreparedStatement ps = connection.prepareStatement(
+						query.toString(), Statement.RETURN_GENERATED_KEYS);
+				 
+				ps.setInt(1, productRatingData.getRatingPoint()); // filterString
+				ps.setInt(2,productRatingData.getProductId() );
+				ps.setInt(3,productRatingData.getUserId() );
+							 
+				return ps;
+			}
+		}, keyHolder);
+		// LOGGER.debug(trackId + " Tracker created ");
+		final int productRatingId = Integer.valueOf(keyHolder.getKeyList().get(0)
+				.get("productratingid").toString());
+
+		productRatingIdMap.put("productratingId", productRatingId+" ");
+
+		return productRatingIdMap;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.repository.LocationRepository#saveUserDetails(com.advaizer.model.User)
+	 */
+	@Override
+	public Map<String, String> saveUserDetails(final User userData) {
+		// TODO Auto-generated method stub
+		final HashMap<String,String> userIdMap = new HashMap<String,String>();
+		 
+		  LOGGER.debug("Getting query for saving track details");
+	 
+		 final StringBuilder query =BasicFilterQueryBuilder.addUserDetailsQuery();
+
+	 LOGGER.debug(" query : " + query.toString());
+
+		// final int trackId = jdbcTemplate.update(query.toString(),
+		// parameterMap.values().toArray());
+		final KeyHolder keyHolder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			@Override
+			public PreparedStatement createPreparedStatement(
+					final Connection connection) throws SQLException {
+				final PreparedStatement ps = connection.prepareStatement(
+						query.toString(), Statement.RETURN_GENERATED_KEYS);
+				 
+				ps.setString(1, userData.getUserName().toString()); // filterString
+				ps.setString(2, userData.getUserPass().toString());
+							 
+				return ps;
+			}
+		}, keyHolder);
+		// LOGGER.debug(trackId + " Tracker created ");
+		final int userId = Integer.valueOf(keyHolder.getKeyList().get(0)
+				.get("userid").toString());
+
+		userIdMap.put("userId", userId+" ");
+
+		return userIdMap;
+	}
 
 	/* (non-Javadoc)
 	 * @see com.advaizer.repository.LocationRepository#getMajorZoneAreaRepository(int)
