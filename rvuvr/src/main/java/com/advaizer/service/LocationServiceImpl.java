@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.advaizer.model.Product;
+import com.advaizer.model.ProductBrand;
 import com.advaizer.repository.LocationRepository;
 
 /**
@@ -175,7 +176,7 @@ LOGGER.debug("inside getProductRatingsPerLocationService");
 	 * @see com.advaizer.service.LocationService#saveBrandDetails(java.util.Map)
 	 */
 	@Override
-	public Map<String, String> saveBrandDetails(final Map<String, Object> brandData) {
+	public Map<String, String> saveBrandDetails(final ProductBrand brandData) {
 		 
 		return locationRepository.saveBrandDetails(brandData);
 	}

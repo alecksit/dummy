@@ -27,7 +27,7 @@ import org.springframework.stereotype.Repository;
 
 import com.advaizer.enums.LocationColumns;
 import com.advaizer.model.Product;
-import com.advaizer.model.Tracker;
+import com.advaizer.model.ProductBrand;
 import com.advaizer.query.BasicFilterQueryBuilder;
 
 /**
@@ -440,14 +440,13 @@ final String query = BasicFilterQueryBuilder.getProductRatingPerLocationQuery(lo
 	 * @see com.advaizer.repository.LocationRepository#saveBrandDetails(java.util.Map)
 	 */
 	@Override
-	public Map<String, String> saveBrandDetails(final Map<String, Object> brandData) {
-		final Tracker tracker = new Tracker();
+	public Map<String, String> saveBrandDetails(final ProductBrand brandData) {
+		final HashMap<String,String> brandIdMap = new HashMap<String,String>();
 		 
-		final StringBuilder query = new StringBuilder();
-		 LOGGER.debug("Getting query for saving track details");
+		  LOGGER.debug("Getting query for saving track details");
 
 		 
-		 query=(StringBuilder) BasicFilterQueryBuilder.addBrandDetailsQuery();
+		 final StringBuilder query =(StringBuilder) BasicFilterQueryBuilder.addBrandDetailsQuery();
 
 	 LOGGER.debug(" query : " + query.toString());
 
@@ -461,26 +460,20 @@ final String query = BasicFilterQueryBuilder.getProductRatingPerLocationQuery(lo
 				final PreparedStatement ps = connection.prepareStatement(
 						query.toString(), Statement.RETURN_GENERATED_KEYS);
 				 
-				ps.setString(1, parameterArray[0].toString()); // name
-				ps.setInt(2, parameterArray[1].toString()); // filterString
-				ps.setInt(3, parameterArray[2].toString()); // start_old_timeformat
+				ps.setString(1, brandData.getBrandName().toString()); // name
+				ps.setInt(2,  brandData.getBrandType()  ); // filterString
+				ps.setInt(3, brandData.getCompanyId() ); // start_old_timeformat
 				 
 				return ps;
 			}
 		}, keyHolder);
 		// LOGGER.debug(trackId + " Tracker created ");
-		final long trackerId = Long.valueOf(keyHolder.getKeyList().get(0)
-				.get("id").toString());
+		final int brandId = Integer.valueOf(keyHolder.getKeyList().get(0)
+				.get("brandid").toString());
 
-		if (trackerId >= 1) {
-			tracker.setId(trackerId);
-			tracker.setTrackName(trackName);
-			// tracker.setFilterLabel(filterString.toString());
-			tracker.setFilterLabel(filterLabels);
-			tracker.setFilterString(filterJson);
-		}
+		brandIdMap.put("brandId", brandId+" ");
 
-		return tracker.convertToMap();
+		return brandIdMap;
 	}
 	 /* @see com.advaizer.repository.LocationRepository#getProductDetailPerCompanyRepository(int)
 	 */

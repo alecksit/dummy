@@ -12,12 +12,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.advaizer.model.ProductBrand;
 import com.advaizer.repository.LocationRepositoryImpl;
 import com.advaizer.service.LocationService;
 
@@ -123,12 +123,15 @@ public class AdminController {
 	
 	@RequestMapping(value="/add/brand", method = RequestMethod.GET)
 	public @ResponseBody Map<String,String> addBrand(  
-			@RequestBody final Map<String,Object> brandData) 
+			 final ProductBrand brandData) 
 			  {
-		 
-		final Map<String, String> brandMap =  locationService.saveBrandDetails(brandData);
+ 
 		
-		return brandMap;
+		   System.out.print(brandData.getBrandId()+""+brandData.getBrandName()+""+brandData.getBrandType()+""+brandData.getCompanyId());
+		  final Map<String, String> brandMap =  locationService.saveBrandDetails(brandData);
+ 
+		
+		 return brandMap; 
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value={"/states"})
