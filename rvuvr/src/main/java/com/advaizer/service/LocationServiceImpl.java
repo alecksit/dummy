@@ -259,6 +259,78 @@ LOGGER.debug("inside getProductDetailsPerCompanyService");
 		return locationRepository.saveUserDetails(userData);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#updateAreaDetails(com.advaizer.model.Area)
+	 */
+	@Override
+	public Map<String, String> updateAreaDetails(final Area areaData) {
+		// TODO Auto-generated method stub
+		return locationRepository.updateAreaDetails(areaData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#updateBrandDetails(com.advaizer.model.ProductBrand)
+	 */
+	@Override
+	public Map<String, String> updateBrandDetails(final ProductBrand brandData) {
+		// TODO Auto-generated method stub
+		return locationRepository.updateBrandDetails(brandData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#updateCategoryDetails(com.advaizer.model.Category)
+	 */
+	@Override
+	public Map<String, String> updateCategoryDetails(final Category categoryData) {
+		// TODO Auto-generated method stub
+		return locationRepository.updateCategoryDetails(categoryData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#updateCompanyDetails(com.advaizer.model.Company)
+	 */
+	@Override
+	public Map<String, String> updateCompanyDetails(final Company companyData) {
+		// TODO Auto-generated method stub
+		return locationRepository.updateCompanyDetails(companyData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#updateLocationDetails(com.advaizer.model.Location)
+	 */
+	@Override
+	public Map<String, String> updateLocationDetails(final Location locationData) {
+		// TODO Auto-generated method stub
+		return locationRepository.updateLocationDetails(locationData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#updateProductDetails(com.advaizer.model.Product)
+	 */
+	@Override
+	public Map<String, String> updateProductDetails(final Product productData) {
+		// TODO Auto-generated method stub
+		return locationRepository.updateProductDetails(productData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#updateProductRatingDetails(com.advaizer.model.ProductRating)
+	 */
+	@Override
+	public Map<String, String> updateProductRatingDetails(final ProductRating productRatingData) {
+		// TODO Auto-generated method stub
+		return locationRepository.updateProductRatingDetails(productRatingData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#updateUserDetails(com.advaizer.model.User)
+	 */
+	@Override
+	public Map<String, String> updateUserDetails(final User userData) {
+		// TODO Auto-generated method stub
+		return locationRepository.updateUserDetails(userData);
+	}
+
 	
 
 }

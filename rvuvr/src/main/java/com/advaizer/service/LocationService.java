@@ -132,6 +132,46 @@ public interface LocationService {
 	 * @return
 	 */
 	public Map<String, String> saveUserDetails(final User userData);
+	/**
+	 * @param areaData
+	 * @return
+	 */
+	public Map<String, String> updateAreaDetails(final Area areaData);
+	/**
+	 * @param brandData
+	 * @return
+	 */
+	public Map<String, String> updateBrandDetails(final ProductBrand brandData);
+	/**
+	 * @param categoryData
+	 * @return
+	 */
+	public Map<String, String> updateCategoryDetails(final Category categoryData);
+	/**
+	 * @param companyData
+	 * @return
+	 */
+	public Map<String, String> updateCompanyDetails(final Company companyData);
+	/**
+	 * @param locationData
+	 * @return
+	 */
+	public Map<String, String> updateLocationDetails(final Location locationData);
+	/**
+	 * @param productData
+	 * @return
+	 */
+	public Map<String, String> updateProductDetails(final Product productData);
+	/**
+	 * @param productRatingData
+	 * @return
+	 */
+	public Map<String, String> updateProductRatingDetails(final ProductRating productRatingData);
+	/**
+	 * @param userData
+	 * @return
+	 */
+	public Map<String, String> updateUserDetails(final User userData);
 	 
 
 }

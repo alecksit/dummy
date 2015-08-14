@@ -226,9 +226,91 @@ public class AdminController {
 
 		return locationService.getAllStatesService();
 	}
-	
-	
-	
+	@RequestMapping(value="/update/area", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> updateArea(  
+			 final Area areaData) 
+			  {
+ 
+		   System.out.print(areaData.getAreaId()+""+areaData.getStateId()+""+areaData.getAreaName());
+		  final Map<String, String> areaMap =  locationService.updateAreaDetails(areaData);
+ 
+		 return areaMap; 
+	}
+	@RequestMapping(value="/update/brand", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> updateBrand(  
+			 final ProductBrand brandData) 
+			  {
+ 
+		
+		   System.out.print(brandData.getBrandId()+""+brandData.getBrandName()+""+brandData.getBrandType()+""+brandData.getCompanyId());
+		  final Map<String, String> brandMap =  locationService.updateBrandDetails(brandData);
+ 
+		
+		 return brandMap; 
+	}
+	@RequestMapping(value="/update/category", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> updateCategory(  
+			 final Category categoryData) 
+			  {
+ 
+		
+		   System.out.print(categoryData.getCategoryId()+""+categoryData.getCategoryName()+""+categoryData.getParentCategoryId());
+		  final Map<String, String> categoryMap =  locationService.updateCategoryDetails(categoryData);
+ 		
+		 return categoryMap; 
+	}
+	@RequestMapping(value="/update/company", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> updateCompany(  
+			 final Company companyData) 
+			  {
+ 
+		
+		   System.out.print(companyData.getCompanyId()+""+companyData.getCompanyName()+""+companyData.getCompanyLocation()+""+companyData.getParentCompanyId());
+		  final Map<String, String> companyMap =  locationService.updateCompanyDetails(companyData);
+ 
+		
+		 return companyMap; 
+	}
+	@RequestMapping(value="/update/location", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> updateLocation(  
+			 final Location locationData) 
+			  {
+ 
+		   System.out.print(locationData.getLocationId()+""+locationData.getAreaId()+""+locationData.getLocationName());
+		  final Map<String, String> locationMap =  locationService.updateLocationDetails(locationData);
+ 
+		 return locationMap; 
+	}
+	@RequestMapping(value="/update/product", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> updateProduct(  
+			 final Product productData) 
+			  {
+ 
+		   System.out.print(productData.getProductId()+""+productData.getProductName()+""+productData.getBrandId()+""+productData.getCategoryId());
+		  final Map<String, String> productMap =  locationService.updateProductDetails(productData);
+ 
+		 return productMap; 
+	}
+	@RequestMapping(value="/update/productratings", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> updateProductRating(  
+			 final ProductRating productRatingData) 
+			  {
+ 
+		   System.out.print(productRatingData.getRatingId()+""+productRatingData.getRatingPoint()+""+productRatingData.getRatingId()+""+productRatingData.getUserId());
+		  final Map<String, String> productRatingMap =  locationService.updateProductRatingDetails(productRatingData);
+ 
+		 return productRatingMap; 
+	}
+	@RequestMapping(value="/update/user", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> updateUser(  
+			 final User userData) 
+			  {
+ 
+		   System.out.print(userData.getUserId()+""+userData.getUserName()+""+userData.getUserPass());
+		  final Map<String, String> userMap =  locationService.updateUserDetails(userData);
+ 
+		 return userMap; 
+	}
 	
 }
 

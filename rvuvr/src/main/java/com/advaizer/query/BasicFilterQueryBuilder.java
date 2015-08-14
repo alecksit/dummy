@@ -335,4 +335,116 @@ final StringBuilder query=new StringBuilder("");
 		 return query;
 	}
 
+	/**
+	 * @return
+	 */
+	public static StringBuilder updateAreaDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" update ");
+	 
+		query.append(Relation.AREA).append(" set ").append("stateid").append(" = ?")
+		.append(", ").append("areaname").append(" = ? ").append(" where ").append("areaid ")
+		.append("= ?") ;		
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder updateBrandDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" update ");
+	 
+		query.append(Relation.BRAND).append(" set ").append("companyid").append(" = ?")
+		.append(", ").append("brandname").append(" = ? ").append(", ").append("brandtype").append(" = ? ").append(" where ").append("brandid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder updateCategoryDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" update ");
+	 
+		query.append(Relation.CATEGORY).append(" set ").append("categoryname").append(" = ?")
+		.append(", ").append("parentcategoryid").append(" = ? ").append(" where ").append("categoryid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder updateCompanyDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" update ");
+	 
+		query.append(Relation.COMPANY).append(" set ").append("companyname").append(" = ?")
+		.append(", ").append("companylocation").append(" = ? ").append(", ").append("parentcompanyid").append(" = ? ").append(" where ").append("companyid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder updateLocationDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" update ");
+	 
+		query.append(Relation.LOCATION).append(" set ").append("areaid").append(" = ?")
+		.append(", ").append("locationname").append(" = ? ").append(" where ").append("locationid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder updateProductDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" update ");
+	 
+		query.append(Relation.PRODUCT).append(" set ").append("productname").append(" = ?")
+		.append(", ").append("brandid").append(" = ? ").append(", ").append("categoryid").append(" = ? ").append(" where ").append("productid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder updateProductRatingDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" update ");
+	 
+		query.append(Relation.PRODUCTRATINGS).append(" set ").append("ratingpoint").append(" = ?")
+		.append(", ").append("productid").append(" = ? ").append(", ").append("userid").append(" = ? ").append(" where ").append("ratingid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder updateUserDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" update ");
+	 
+		query.append(Relation.USER).append(" set ").append("username").append(" = ?")
+		.append(", ").append("userpass").append(" = ? ").append(" where ").append("userid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
 }
