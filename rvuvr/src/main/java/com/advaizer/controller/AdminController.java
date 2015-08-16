@@ -24,6 +24,7 @@ import com.advaizer.model.Location;
 import com.advaizer.model.Product;
 import com.advaizer.model.ProductBrand;
 import com.advaizer.model.ProductRating;
+import com.advaizer.model.Service;
 import com.advaizer.model.User;
 import com.advaizer.repository.LocationRepositoryImpl;
 import com.advaizer.service.LocationService;
@@ -207,6 +208,16 @@ public class AdminController {
  
 		 return productRatingMap; 
 	}
+	@RequestMapping(value="/add/service", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> addService(  
+			 final Service serviceData) 
+			  {
+ 
+		   System.out.print(serviceData.getServiceId()+""+serviceData.getServiceName()+""+serviceData.getBrandId());
+		  final Map<String, String> serviceMap =  locationService.saveServiceDetails(serviceData);
+ 
+		 return serviceMap; 
+	}
 	@RequestMapping(value="/add/user", method = RequestMethod.GET)
 	public @ResponseBody Map<String,String> addUser(  
 			 final User userData) 
@@ -291,6 +302,16 @@ public class AdminController {
  
 		 return productMap; 
 	}
+	@RequestMapping(value="/update/service", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> updateService(  
+			 final Service serviceData) 
+			  {
+ 
+		   System.out.print(serviceData.getServiceId()+""+serviceData.getServiceName()+""+serviceData.getBrandId());
+		  final Map<String, String> serviceMap =  locationService.updateServiceDetails(serviceData);
+ 
+		 return serviceMap; 
+	}
 	@RequestMapping(value="/update/productratings", method = RequestMethod.GET)
 	public @ResponseBody Map<String,String> updateProductRating(  
 			 final ProductRating productRatingData) 
@@ -310,6 +331,97 @@ public class AdminController {
 		  final Map<String, String> userMap =  locationService.updateUserDetails(userData);
  
 		 return userMap; 
+	}
+	@RequestMapping(value="/dalete/area", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> deleteArea(  
+			 final Area areaData) 
+			  {
+		   System.out.print(areaData.getAreaId()+""+areaData.getStateId()+""+areaData.getAreaName());
+		  final Map<String, String> areaMap =  locationService.deleteAreaDetails(areaData);
+ 
+		 return areaMap; 
+	}
+	@RequestMapping(value="/delete/brand", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> deleteBrand(  
+			 final ProductBrand brandData) 
+			  {
+		   System.out.print(brandData.getBrandId()+""+brandData.getBrandName()+""+brandData.getBrandType()+""+brandData.getCompanyId());
+		  final Map<String, String> brandMap =  locationService.deleteBrandDetails(brandData);
+ 		
+		 return brandMap; 
+	}
+	@RequestMapping(value="/delete/category", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> deleteCategory(  
+			 final Category categoryData) 
+			  {
+ 
+		
+		   System.out.print(categoryData.getCategoryId()+""+categoryData.getCategoryName()+""+categoryData.getParentCategoryId());
+		  final Map<String, String> categoryMap =  locationService.deleteCategoryDetails(categoryData);
+ 		
+		 return categoryMap; 
+	}
+	@RequestMapping(value="/delete/company", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> deleteCompany(  
+			 final Company companyData) 
+			  {
+ 
+		
+		   System.out.print(companyData.getCompanyId()+""+companyData.getCompanyName()+""+companyData.getCompanyLocation()+""+companyData.getParentCompanyId());
+		  final Map<String, String> companyMap =  locationService.deleteCompanyDetails(companyData);
+ 
+		
+		 return companyMap; 
+	}
+	@RequestMapping(value="/delete/location", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> deleteLocation(  
+			 final Location locationData) 
+			  {
+ 
+		   System.out.print(locationData.getLocationId()+""+locationData.getAreaId()+""+locationData.getLocationName());
+		  final Map<String, String> locationMap =  locationService.deleteLocationDetails(locationData);
+ 
+		 return locationMap; 
+	}
+	@RequestMapping(value="/delete/product", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> deleteProduct(  
+			 final Product productData) 
+			  {
+ 
+		   System.out.print(productData.getProductId()+""+productData.getProductName()+""+productData.getBrandId()+""+productData.getCategoryId());
+		  final Map<String, String> productMap =  locationService.deleteProductDetails(productData);
+ 
+		 return productMap; 
+	}
+	@RequestMapping(value="/delete/productratings", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> deleteProductRating(  
+			 final ProductRating productRatingData) 
+			  {
+ 
+		   System.out.print(productRatingData.getRatingId()+""+productRatingData.getRatingPoint()+""+productRatingData.getRatingId()+""+productRatingData.getUserId());
+		  final Map<String, String> productRatingMap =  locationService.deleteProductRatingDetails(productRatingData);
+ 
+		 return productRatingMap; 
+	}
+	@RequestMapping(value="/delete/user", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> deleteUser(  
+			 final User userData) 
+			  {
+ 
+		   System.out.print(userData.getUserId()+""+userData.getUserName()+""+userData.getUserPass());
+		  final Map<String, String> userMap =  locationService.deleteUserDetails(userData);
+ 
+		 return userMap; 
+	}
+	@RequestMapping(value="/delete/service", method = RequestMethod.GET)
+	public @ResponseBody Map<String,String> deleteService(  
+			 final Service serviceData) 
+			  {
+ 
+		   System.out.print(serviceData.getServiceId()+""+serviceData.getServiceName()+""+serviceData.getBrandId());
+		  final Map<String, String> serviceMap =  locationService.deleteServiceDetails(serviceData);
+ 
+		 return serviceMap; 
 	}
 	
 }

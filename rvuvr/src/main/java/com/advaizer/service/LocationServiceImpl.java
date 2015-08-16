@@ -331,6 +331,109 @@ LOGGER.debug("inside getProductDetailsPerCompanyService");
 		return locationRepository.updateUserDetails(userData);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#deleteAreaDetails(com.advaizer.model.Area)
+	 */
+	@Override
+	public Map<String, String> deleteAreaDetails(final Area areaData) {
+		// TODO Auto-generated method stub
+		return locationRepository.deleteAreaDetails(areaData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#deleteBrandDetails(com.advaizer.model.ProductBrand)
+	 */
+	@Override
+	public Map<String, String> deleteBrandDetails(final ProductBrand brandData) {
+		// TODO Auto-generated method stub
+		return locationRepository.deleteBrandDetails(brandData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#deleteCategoryDetails(com.advaizer.model.Category)
+	 */
+	@Override
+	public Map<String, String> deleteCategoryDetails(final Category categoryData) {
+		// TODO Auto-generated method stub
+		return locationRepository.deleteCategoryDetails(categoryData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#deleteCompanyDetails(com.advaizer.model.Company)
+	 */
+	@Override
+	public Map<String, String> deleteCompanyDetails(final Company companyData) {
+		// TODO Auto-generated method stub
+		return locationRepository.deleteCompanyDetails(companyData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#deleteLocationDetails(com.advaizer.model.Location)
+	 */
+	@Override
+	public Map<String, String> deleteLocationDetails(final Location locationData) {
+		// TODO Auto-generated method stub
+		return locationRepository.deleteLocationDetails(locationData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#deleteProductDetails(com.advaizer.model.Product)
+	 */
+	@Override
+	public Map<String, String> deleteProductDetails(final Product productData) {
+		// TODO Auto-generated method stub
+		return locationRepository.deleteProductDetails(productData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#deleteProductRatingDetails(com.advaizer.model.ProductRating)
+	 */
+	@Override
+	public Map<String, String> deleteProductRatingDetails(final ProductRating productRatingData) {
+		// TODO Auto-generated method stub
+		return locationRepository.deleteProductRatingDetails(productRatingData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#deleteUserDetails(com.advaizer.model.User)
+	 */
+	@Override
+	public Map<String, String> deleteUserDetails(final User userData) {
+		// TODO Auto-generated method stub
+		return locationRepository.deleteUserDetails(userData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#saveServiceDetails(com.advaizer.model.Service)
+	 */
+	@Override
+	public Map<String, String> saveServiceDetails(final com.advaizer.model.Service serviceData) {
+		// TODO Auto-generated method stub
+		return locationRepository.saveServiceDetails(serviceData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#updateServiceDetails(com.advaizer.model.Service)
+	 */
+	@Override
+	public Map<String, String> updateServiceDetails(final com.advaizer.model.Service serviceData) {
+		// TODO Auto-generated method stub
+		return locationRepository.updateServiceDetails(serviceData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#deleteServiceDetails(com.advaizer.model.Service)
+	 */
+	@Override
+	public Map<String, String> deleteServiceDetails(final com.advaizer.model.Service serviceData) {
+		// TODO Auto-generated method stub
+		return locationRepository.deleteServiceDetails(serviceData);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.advaizer.service.LocationService#saveServiceDetails(com.advaizer.model.Service)
+	 */
+
 	
 
 }

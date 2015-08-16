@@ -21,6 +21,7 @@ public enum Relation {
 	CATEGORY("categoryinfo"),
 	COMPANY("companyinfo"),
 	BRAND("brandinfo"),
+	SERVICE("serviceinfo"),
 	USER("userinfo"),
 	PRODUCTRATINGS("productratings"),
 	

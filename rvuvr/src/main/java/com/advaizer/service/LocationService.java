@@ -14,6 +14,7 @@ import com.advaizer.model.Location;
 import com.advaizer.model.Product;
 import com.advaizer.model.ProductBrand;
 import com.advaizer.model.ProductRating;
+import com.advaizer.model.Service;
 import com.advaizer.model.User;
 
 /**
@@ -172,6 +173,61 @@ public interface LocationService {
 	 * @return
 	 */
 	public Map<String, String> updateUserDetails(final User userData);
+	/**
+	 * @param areaData
+	 * @return
+	 */
+	public Map<String, String> deleteAreaDetails(final Area areaData);
+	/**
+	 * @param brandData
+	 * @return
+	 */
+	public Map<String, String> deleteBrandDetails(final ProductBrand brandData);
+	/**
+	 * @param categoryData
+	 * @return
+	 */
+	public Map<String, String> deleteCategoryDetails(final Category categoryData);
+	/**
+	 * @param companyData
+	 * @return
+	 */
+	public Map<String, String> deleteCompanyDetails(final Company companyData);
+	/**
+	 * @param locationData
+	 * @return
+	 */
+	public Map<String, String> deleteLocationDetails(final Location locationData);
+	/**
+	 * @param productData
+	 * @return
+	 */
+	public Map<String, String> deleteProductDetails(final Product productData);
+	/**
+	 * @param productRatingData
+	 * @return
+	 */
+	public Map<String, String> deleteProductRatingDetails(final ProductRating productRatingData);
+	/**
+	 * @param userData
+	 * @return
+	 */
+	public Map<String, String> deleteUserDetails(final User userData);
+	/**
+	 * @param serviceData
+	 * @return
+	 */
+	public Map<String, String> saveServiceDetails(final Service serviceData);
+	/**
+	 * @param serviceData
+	 * @return
+	 */
+	public Map<String, String> updateServiceDetails(final Service serviceData);
+	/**
+	 * @param serviceData
+	 * @return
+	 */
+	public Map<String, String> deleteServiceDetails(final Service serviceData);
 	 
 
 }

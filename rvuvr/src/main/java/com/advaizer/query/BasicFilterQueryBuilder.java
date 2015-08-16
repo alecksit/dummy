@@ -447,4 +447,152 @@ final StringBuilder query=new StringBuilder("");
 		 return query;
 	}
 
+	/**
+	 * @return
+	 */
+	public static StringBuilder deleteAreaDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" delete ");
+	 
+		query.append(" from ").append(Relation.AREA).append(" where ").append(" areaid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder deleteBrandDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" delete ");
+	 
+		query.append(" from ").append(Relation.BRAND).append(" where ").append(" brandid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder deleteCategoryDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" delete ");
+	 
+		query.append(" from ").append(Relation.CATEGORY).append(" where ").append(" categoryid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder deleteCompanyDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" delete ");
+	 
+		query.append(" from ").append(Relation.COMPANY).append(" where ").append(" companyid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder deleteLocationDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" delete ");
+	 
+		query.append(" from ").append(Relation.LOCATION).append(" where ").append(" locationid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder deleteProductDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" delete ");
+	 
+		query.append(" from ").append(Relation.PRODUCT).append(" where ").append(" productid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder deleteProductRatingDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" delete ");
+	 
+		query.append(" from ").append(Relation.PRODUCTRATINGS).append(" where ").append(" ratingid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder deleteUserDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" delete ");
+	 
+		query.append(" from ").append(Relation.USER).append(" where ").append(" userid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder addServiceDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" insert into ");
+	 
+		query.append(Relation.SERVICE);
+	 
+		
+		query.append(" (servicename,brandid )")
+		.append(" values(?,?) ");
+		
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder updateServiceDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" update ");
+	 
+		query.append(Relation.SERVICE).append(" set ").append("servicename").append(" = ?")
+		.append(", ").append("brandid").append(" = ? ").append(" where ").append("serviceid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
+	/**
+	 * @return
+	 */
+	public static StringBuilder deleteServiceDetailsQuery() {
+		// TODO Auto-generated method stub
+		final StringBuilder query=new StringBuilder("");
+		query.append(" delete ");
+	 
+		query.append(" from ").append(Relation.SERVICE).append(" where ").append(" serviceid ")
+		.append("= ?") ;	
+		 return query;
+	}
+
 }
