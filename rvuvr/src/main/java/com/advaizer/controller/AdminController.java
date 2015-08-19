@@ -147,7 +147,6 @@ public class AdminController {
 			 final Area areaData) 
 			  {
  
-		
 		   System.out.print(areaData.getAreaId()+""+areaData.getStateId()+""+areaData.getAreaName());
 		  final Map<String, String> areaMap =  locationService.saveAreaDetails(areaData);
  
@@ -159,7 +158,6 @@ public class AdminController {
 			 final Category categoryData) 
 			  {
  
-		
 		   System.out.print(categoryData.getCategoryId()+""+categoryData.getCategoryName()+""+categoryData.getParentCategoryId());
 		  final Map<String, String> categoryMap =  locationService.saveCategoryDetails(categoryData);
  

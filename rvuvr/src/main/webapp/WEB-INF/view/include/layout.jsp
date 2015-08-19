@@ -71,7 +71,7 @@
 <script type="text/javascript" src="/rvuvr/js/socialstream.jquery.js"></script> 
 <!-- Jquery Map --> 
 <!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> --> 
-<script type="text/javascript" src="/rvuvr/js/jquery.gmap.js"></script> 
+<!--<script type="text/javascript" src="/rvuvr/js/jquery.gmap.js"></script> -->
 <!-- Sparkline --> 
 <script type="text/javascript" src="/rvuvr/js/jquery.sparkline.min.js"></script> 
 <!-- Cloud --> 
@@ -79,13 +79,15 @@
 <!-- Ratina View --> 
 <script type="text/javascript" src="/rvuvr/js/retina-1.1.0.min.js"></script> 
 <!-- Custom --> 
-<script src="/rvuvr/js/custom.js"></script> 
+<script src="/rvuvr/js/brand.js"></script> 
+<script src="/rvuvr/js/area.js"></script>
+<script src="/rvuvr/js/category.js"></script> 
 <!-- Include only for MapSearch Page --> 
 <script src="/rvuvr/js/jquery.ui.core.min.js"></script> 
 <script src="/rvuvr/js/jquery.ui.widget.min.js"></script> 
 <script src="/rvuvr/js/jquery.ui.position.min.js"></script> 
 <script src="/rvuvr/js/jquery.ui.autocomplete.min.js"></script> 
-<script src="/rvuvr/js/map.js"></script> 
+<!--<script src="/rvuvr/js/map.js"></script> -->
 <!-- Style Switcher --> 
 <script type="text/javascript" src="/rvuvr/js/jquery.style-switcher.js"></script> 
 <script type="text/javascript">

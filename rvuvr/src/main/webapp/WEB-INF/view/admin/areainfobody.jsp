@@ -1,5 +1,4 @@
- 
-<div id="maincontainer">
+ <div id="maincontainer">
   <div class="container"> 
     <!--  breadcrumb -->
     <ul class="breadcrumb">
@@ -10,7 +9,7 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <h5 class="heading5">Area Information</h5>
         <div class="loginbox">
-          <form class="form-vertical">
+          <form class="areaform">
             <fieldset>
               <div class="control-group">
                 <label  class="control-label">State-id:</label>

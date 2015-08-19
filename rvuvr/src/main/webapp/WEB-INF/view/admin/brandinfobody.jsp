@@ -11,7 +11,7 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <h5 class="heading5">Brand Information</h5>
         <div class="loginbox">
-          <form class="form-vertical">
+           <form class="brandform">
             <fieldset>
               
               </div>
